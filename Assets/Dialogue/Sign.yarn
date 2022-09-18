@@ -1,0 +1,22 @@
+﻿title: Sign
+---
+FridgeCat: This is a demo sign. Do you read it?
+-> Of course, signs are made to be read.
+    <<jump readSign>>
+-> Of course not, I can't read.
+    <<jump NotReadSign>>
+
+===
+
+title: readSign
+---
+Sign: Welcome to the demo. Half of the map is broken.
+Sign: Please help me fix the game.
+Sign: This is an example of more dialogue.
+Sign: Pressing "C" skips the line.
+===
+
+title: NotReadSign
+---
+Sign: Well I don't want to read you either.
+===
