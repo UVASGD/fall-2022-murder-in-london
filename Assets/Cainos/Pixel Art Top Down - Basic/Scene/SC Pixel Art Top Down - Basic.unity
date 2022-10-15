@@ -29957,6 +29957,16 @@ PrefabInstance:
       propertyPath: continueActionKeyCode
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 2671880058688049436, guid: d420d0b85612df84794d4f37bcf60a7c,
+        type: 3}
+      propertyPath: useTypewriterEffect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671880058688049436, guid: d420d0b85612df84794d4f37bcf60a7c,
+        type: 3}
+      propertyPath: typewriterEffectSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4980463419208647849, guid: d420d0b85612df84794d4f37bcf60a7c,
         type: 3}
       propertyPath: m_AnchorMax.y

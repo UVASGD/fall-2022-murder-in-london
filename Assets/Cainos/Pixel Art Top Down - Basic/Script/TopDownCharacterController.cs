@@ -28,6 +28,18 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
+
+            if (Input.GetKey(KeyCode.K))
+            {
+
+                var cur = FindObjectOfType<LineView>().typewriterEffectSpeed;
+                if (cur == 50)
+                    FindObjectOfType<LineView>().typewriterEffectSpeed = 80;
+                else if (cur == 80)
+                    FindObjectOfType<LineView>().typewriterEffectSpeed = 110;
+                else
+                    FindObjectOfType<LineView>().typewriterEffectSpeed = 50;
+            }
             // Remove all player control when we're in dialogue
             if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
             {
