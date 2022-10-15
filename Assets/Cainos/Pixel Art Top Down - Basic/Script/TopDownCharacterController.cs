@@ -28,7 +28,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
-
+            // Check for change in dialog speed and change depending on current speed. 
             if (Input.GetKey(KeyCode.K))
             {
 
