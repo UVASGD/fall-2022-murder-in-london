@@ -6,11 +6,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 
-public class CharacterOptions : NPC
+public class CharacterOptionViews : MonoBehaviour
 {
 
     [SerializeField] public GameObject button;
-    [SerializeField] public CanvasGroup canvasGroup;
+    [SerializeField] public Sprite image;
+    [SerializeField] public CanvasGroup mainCanvasGroup;
     [SerializeField] public List<string> optionChoices;
     private float fadeTime = 1f;
 
@@ -19,9 +20,9 @@ public class CharacterOptions : NPC
     // Start is called before the first frame update
     void Start()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
+        mainCanvasGroup.alpha = 0;
+        mainCanvasGroup.interactable = false;
+        mainCanvasGroup.blocksRaycasts = false;
 
     }
 
@@ -29,24 +30,22 @@ public class CharacterOptions : NPC
     {
         var choiceButton = Instantiate(button);
 
-        choiceButton.gameObject.transform.SetParent(transform, false);
+        GameObject buttonPanel = transform.GetChild(1).gameObject;
+        choiceButton.gameObject.transform.SetParent(buttonPanel.transform, false);
         choiceButton.gameObject.transform.SetAsLastSibling();
         choiceButton.gameObject.SetActive(false);
 
         buttonList.Add(choiceButton);
     }
 
-    public override void interact()
+    public void Interact()
     {
         while (buttonList.Count < optionChoices.Count)
         {
             CreateNewButton();
         }
 
-        //foreach (Transform child in transform)
-        //{
-        //    Debug.Log(child.name);
-        //}
+        //create new buttons for each option in list, add to button panel
 
         for (int i = 0; i < optionChoices.Count; i++)
         {
@@ -67,15 +66,25 @@ public class CharacterOptions : NPC
 
         }
 
+        //set image
+        GameObject characterImage = transform.GetChild(0).gameObject;
+
+        characterImage.GetComponent<Image>().sprite = image;
+
 
         // Fade it all in
-        StartCoroutine(Effects.FadeAlpha(canvasGroup, 0, 1, fadeTime));
+        StartCoroutine(Effects.FadeAlpha(mainCanvasGroup, 0, 1, fadeTime));
 
         print("supposed to have faded in");
 
     }
 
-    public override void leaveInteraction()
+    public void SetValues(Sprite new_image, List<string> newOptionChoices)
+    {
+        image = new_image;
+        optionChoices = newOptionChoices;
+    }
+    public void LeaveInteraction()
     {
         StartCoroutine(FadeOut(fadeTime, EndInteraction));
 
@@ -88,15 +97,16 @@ public class CharacterOptions : NPC
 
     IEnumerator FadeOut(float fadeOutTime, Action EndInteraction)
     {
-        yield return StartCoroutine(Effects.FadeAlpha(canvasGroup, 1, 0, fadeOutTime));
+        yield return StartCoroutine(Effects.FadeAlpha(mainCanvasGroup, 1, 0, fadeOutTime));
         EndInteraction();
         print("ending interaction");
     }
     void EndInteraction()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
+        mainCanvasGroup.alpha = 0;
+        mainCanvasGroup.interactable = false;
+        mainCanvasGroup.blocksRaycasts = false;
+        image = null;
     }
 
 

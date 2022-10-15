@@ -13,9 +13,8 @@ namespace Cainos.PixelArtTopDown_Basic
         //so we are going to make it so that the input gets turned off
         private DialogueAdvanceInput dialogueInput;
         private Animator animator;
-        public float interactionRadius = 0.75f;
+        public float interactionRadius = 1f;
         public int direction_facing = 0;
-        public NPC current_interaction = null;
 
 
         private void Start()
@@ -28,26 +27,24 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
+            InteractionManager.InteractionState currentState = InteractionManager.Instance.GetInteractionState();
             // Remove all player control when we're in dialogue
-            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
+            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || currentState != InteractionManager.InteractionState.playerMove)
             {
                 Vector2 dir_dialogue = Vector2.zero;
                 dir_dialogue.Normalize();
                 animator.SetBool("IsMoving", dir_dialogue.magnitude > 0);
 
                 GetComponent<Rigidbody2D>().velocity = speed * dir_dialogue;
+
+                if (Input.GetKeyUp(KeyCode.Z))
+                {
+                    Debug.Log("setting to playermovement");
+                    InteractionManager.Instance.SetToPlayerMovement();
+                }
                 return;
             }
 
-            if (current_interaction != null)
-            {
-                if (Input.GetKeyUp(KeyCode.Z))
-                {
-                    print("Z button pressed");
-                    current_interaction.leaveInteraction();
-                    current_interaction = null;
-                }
-            }
             // every time we LEAVE dialogue we have to make sure we disable the input again
             if (dialogueInput.enabled)
             {
@@ -98,7 +95,27 @@ namespace Cainos.PixelArtTopDown_Basic
         }
         public void PerformInteraction()
         {
-            RaycastHit2D hit;
+
+            var allParticipants = new List<NPC>(FindObjectsOfType<NPC>());
+            //Debug.Log(allParticipants.Count);
+            var target = allParticipants.Find(delegate (NPC p)
+            {
+                Debug.Log(p.characterName);
+                Debug.Log(string.IsNullOrEmpty(p.talkToNode) == false);
+                Debug.Log((p.transform.position - this.transform.position)// is in range?
+                .magnitude);
+                Debug.Log((p.transform.position - this.transform.position).magnitude <= interactionRadius);
+                Debug.Log(interactionRadius);
+                return string.IsNullOrEmpty(p.talkToNode) == false && //has a conversation node?
+                (p.transform.position - this.transform.position)// is in range?
+                .magnitude <= interactionRadius;
+            });
+
+            if (target == null)
+            {
+                return;
+            }
+
 
             Vector3 raycast_direction = new Vector3(0, 0, 0);
 
@@ -118,34 +135,32 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 raycast_direction = new Vector3(-1, 0, 0);
             }
+            
 
+            // Debug.Log(target);
+            Vector3 direction_to_target = (target.transform.position - this.transform.position);
+            Debug.Log(direction_to_target);
+            Debug.Log(raycast_direction);
+            Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
 
-            Debug.Log("trying to perform action: testing raycast");
-            hit = Physics2D.Raycast(this.transform.position, raycast_direction);
-            // If the ray hits
-            if (hit.collider != null)
+            if (Vector3.Angle(direction_to_target, raycast_direction) > 49)
             {
-                Debug.DrawRay(this.transform.position, raycast_direction * hit.distance, Color.black);
-                Debug.Log("raycast hit");
-                if (hit.collider != null)
+                return;
+            }
+            if (target != null)
+            {
+                CharacterOptionFields targetFields = target.GetComponent<CharacterOptionFields>();
+
+                //if target has no character option fields, then that means that the target is a piece of evidence
+                if (targetFields == null)
                 {
-                    Debug.Log(hit.collider);
-                }
-                NPC interaction = hit.collider.GetComponentInChildren<NPC>();
-                if (interaction != null)
-                {
-                    current_interaction = interaction;
-                    interaction.interact();
+
                 }
                 else
                 {
-                    print("interaction is null");
+                    Debug.Log("setting to character Interaction");
+                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.character_options);
                 }
-            }
-            else
-            {
-                Debug.DrawRay(this.transform.position, raycast_direction * 3f, Color.yellow);
-                Debug.Log("raycast no hit");
             }
         }
         /// <summary>
@@ -163,12 +178,6 @@ namespace Cainos.PixelArtTopDown_Basic
                 //Debug.Log(allParticipants.Count);
                 var target = allParticipants.Find(delegate (NPC p)
                 {
-                    //Debug.Log(p.characterName);
-                    //Debug.Log(string.IsNullOrEmpty(p.talkToNode) == false);
-                    //Debug.Log((p.transform.position - this.transform.position)// is in range?
-                    //.magnitude);
-                    //Debug.Log((p.transform.position - this.transform.position).magnitude <= interactionRadius);
-                    //Debug.Log(interactionRadius);
 
                     return string.IsNullOrEmpty(p.talkToNode) == false && //has a conversation node?
                     (p.transform.position - this.transform.position)// is in range?
