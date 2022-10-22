@@ -236,12 +236,8 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             Debug.Log("entering coroutine");
             target.interact();
-
-            yield return new WaitForSeconds(2);
-
             dialogueInput.enabled = true;
             FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
-
             yield return new WaitForSeconds(0);
         }
     }
