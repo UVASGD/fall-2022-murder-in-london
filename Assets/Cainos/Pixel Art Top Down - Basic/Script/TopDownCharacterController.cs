@@ -14,6 +14,7 @@ namespace Cainos.PixelArtTopDown_Basic
         // so we are going to make it so that the input gets turned off
         private DialogueAdvanceInput dialogueInput;
         private Animator animator;
+        private DialogueRunner dialogueRunner;
         public float interactionRadius = 0.75f;
         public int direction_facing = 0;
         public double time = 0;
@@ -22,7 +23,14 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             animator = GetComponent<Animator>();
             dialogueInput = FindObjectOfType<DialogueAdvanceInput>();
+            dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+            dialogueRunner.AddCommandHandler<int>("textSpeed", changeTextSpeed);
             dialogueInput.enabled = false;
+        }
+        
+        private void changeTextSpeed(int speed)
+        {
+            FindObjectOfType<LineView>().typewriterEffectSpeed = speed;
         }
 
 
