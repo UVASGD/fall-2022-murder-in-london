@@ -128,6 +128,7 @@ public class ProgressManager : MonoBehaviour
     {
         //transition to next scene once done
         StartCoroutine(FadeOutFadeIn());
+        StartCoroutine(FadeTransition());
         //move to next scene?
         SceneTransition(newExpectedSceneList);
     }
@@ -150,6 +151,14 @@ public class ProgressManager : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 2));
+    }
+
+    IEnumerator FadeTransition()
+    {
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 2));
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 2));
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 2));
         yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 2));
     }
 }
