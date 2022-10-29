@@ -14,20 +14,41 @@ namespace Cainos.PixelArtTopDown_Basic
         // so we are going to make it so that the input gets turned off
         private DialogueAdvanceInput dialogueInput;
         private Animator animator;
+        private DialogueRunner dialogueRunner;
         public float interactionRadius = 0.75f;
         public int direction_facing = 0;
-
+        public double time = 0;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
             dialogueInput = FindObjectOfType<DialogueAdvanceInput>();
+            dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+            dialogueRunner.AddCommandHandler<int>("textSpeed", changeTextSpeed);
             dialogueInput.enabled = false;
+        }
+        
+        private void changeTextSpeed(int speed)
+        {
+            FindObjectOfType<LineView>().typewriterEffectSpeed = speed;
         }
 
 
         private void Update()
         {
+            // Check for change in dialog speed and change depending on current speed. 
+            if (Input.GetKeyUp(KeyCode.K))
+            {
+                    
+                    var cur = FindObjectOfType<LineView>().typewriterEffectSpeed;
+                    if (cur == 50)
+                        FindObjectOfType<LineView>().typewriterEffectSpeed = 80;
+                    else if (cur == 80)
+                        FindObjectOfType<LineView>().typewriterEffectSpeed = 110;
+                    else
+                        FindObjectOfType<LineView>().typewriterEffectSpeed = 50;
+                
+            }
             // Remove all player control when we're in dialogue
             if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
             {

@@ -1,4 +1,11 @@
 ﻿title: Chest
 ---
+<<textSpeed 0>>
+Player: The chest is locked.
+<<textSpeed 50>>
+Player: The chest is locked.
+<<textSpeed 100>>
+Player: The chest is locked.
+<<textSpeed 150>>
 Player: The chest is locked.
 ===
