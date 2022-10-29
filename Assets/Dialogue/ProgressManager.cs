@@ -25,7 +25,6 @@ public class ProgressManager : MonoBehaviour
             _progressManager = this;
         }
     }
-
     #endregion 
 
     //track progress of player for entire game
