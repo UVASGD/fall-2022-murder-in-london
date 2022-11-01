@@ -23,14 +23,14 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             animator = GetComponent<Animator>();
             dialogueInput = FindObjectOfType<DialogueAdvanceInput>();
-            dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+            dialogueRunner = FindObjectOfType<DialogueRunner>();
             dialogueRunner.AddCommandHandler<int>("textSpeed", changeTextSpeed);
             dialogueInput.enabled = false;
         }
         
         private void changeTextSpeed(int speed)
         {
-            FindObjectOfType<LineView>().typewriterEffectSpeed = speed;
+            FindObjectOfType<CustomLineView>().typewriterEffectSpeed = speed;
         }
 
 
@@ -40,13 +40,13 @@ namespace Cainos.PixelArtTopDown_Basic
             if (Input.GetKeyUp(KeyCode.K))
             {
                     
-                    var cur = FindObjectOfType<LineView>().typewriterEffectSpeed;
+                    var cur = FindObjectOfType<CustomLineView>().typewriterEffectSpeed;
                     if (cur == 50)
-                        FindObjectOfType<LineView>().typewriterEffectSpeed = 80;
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 80;
                     else if (cur == 80)
-                        FindObjectOfType<LineView>().typewriterEffectSpeed = 110;
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 110;
                     else
-                        FindObjectOfType<LineView>().typewriterEffectSpeed = 50;
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 50;
                 
             }
             // Remove all player control when we're in dialogue
