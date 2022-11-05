@@ -26,17 +26,27 @@ SOFTWARE.
 
 using UnityEngine;
 
-namespace Yarn.Unity.Example
+
+/// <summary>
+/// Attached to the non-player characters, and stores the name of the Yarn
+/// node that should be run when you talk to them.
+/// </summary>
+public class NPC : MonoBehaviour
 {
-    /// <summary>
-    /// Attached to the non-player characters, and stores the name of the Yarn
-    /// node that should be run when you talk to them.
-    /// </summary>
-    public class NPC : MonoBehaviour
+    public string characterName = "";
+
+    public string talkToNode = "";
+
+    //override this method
+    public virtual void interact()
     {
-        public string characterName = "";
 
-        public string talkToNode = "";
     }
+    public virtual void leaveInteraction()
+    {
 
+    }
 }
+
+
+

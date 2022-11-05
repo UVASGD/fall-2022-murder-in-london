@@ -1,11 +1,23 @@
 ﻿title: Chest
 ---
-<<textSpeed 0>>
-Player: The chest is locked.
-<<textSpeed 50>>
-Player: The chest is locked.
-<<textSpeed 100>>
-Player: The chest is locked.
-<<textSpeed 150>>
-Player: The chest is locked.
+<<if checkAchievement("chest") is false>>
+Player: The chest is locked. Unlock?
+-> Unlock chest
+    <<jump UnlockChest>>
+-> Leave as is
+    <<jump End>>
+<<else>>
+Player: The chest is unlocked. Nothing was inside.
+<<jump End>>
+<<endif>>
+===
+
+title: UnlockChest
+---
+Player: The chest is now unlocked!
+<<achievement chest>>
+===
+
+title: End
+---
 ===
