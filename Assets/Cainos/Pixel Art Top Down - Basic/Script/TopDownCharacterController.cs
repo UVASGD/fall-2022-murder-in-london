@@ -180,6 +180,7 @@ namespace Cainos.PixelArtTopDown_Basic
                 {
                     Debug.Log("setting to character Interaction");
                     InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.character_options);
+                    //FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
                 }
             }
         }
