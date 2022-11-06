@@ -1,4 +1,5 @@
 using System.Collections;
+using Transitions;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
@@ -8,6 +9,7 @@ public class SceneDirector : MonoBehaviour
 
     #region Singleton
     private static SceneDirector _sceneDirector;
+
 
     public static SceneDirector Instance { get { return _sceneDirector; } }
 
@@ -38,6 +40,11 @@ public class SceneDirector : MonoBehaviour
             dialogueRunnerObject.AddFunction(
                 "checkAchievement",
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
+                );
+            //Plays transisition animation, such as fade, wipe, etc.
+            dialogueRunnerObject.AddCommandHandler<string>(
+                "playTransition",
+                PlayTransitionAnimation
                 );
         }
         else
@@ -86,6 +93,10 @@ public class SceneDirector : MonoBehaviour
     private bool CheckIfPlayerCompleted(string nodeName)
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
+    }
+    private void PlayTransitionAnimation(string transitionType)
+    {
+        TransitionManager.Instance.PlayTransition( transitionType );
     }
     
 }

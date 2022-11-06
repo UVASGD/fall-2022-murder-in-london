@@ -38,7 +38,6 @@ public class ProgressManager : MonoBehaviour
 
     private HashSet<string> expectedSceneProgressList = new(); //expected progress by the end of the scene
 
-    public CanvasGroup curtainCanvasGroup;
     // Start is called before the first frame update
     void Start()
     {
@@ -127,7 +126,6 @@ public class ProgressManager : MonoBehaviour
     public void FinishScene(List<string> newExpectedSceneList)
     {
         //transition to next scene once done
-        StartCoroutine(FadeOutFadeIn());
         //move to next scene?
         SceneTransition(newExpectedSceneList);
     }
@@ -141,15 +139,4 @@ public class ProgressManager : MonoBehaviour
         
     }
 
-    //coroutine that fades outs then fades in
-    //used for testing the progress manager
-    IEnumerator FadeOutFadeIn()
-    {
-        Debug.Log("entering: ProgressManager.FadeOutFadeIn()");
-        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 2));
-
-        yield return new WaitForSeconds(2);
-
-        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 2));
-    }
 }
