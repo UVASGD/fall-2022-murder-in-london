@@ -42,9 +42,10 @@ public class SceneDirector : MonoBehaviour
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
                 );
             //Plays transisition animation, such as fade, wipe, etc.
-            dialogueRunnerObject.AddCommandHandler<string>(
+            dialogueRunnerObject.AddCommandHandler(
                 "playTransition",
-                PlayTransitionAnimation
+                (string transitionName) => {
+                    return StartCoroutine(PlayTransitionAnimation(transitionName)); }
                 );
         }
         else
@@ -94,9 +95,9 @@ public class SceneDirector : MonoBehaviour
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
     }
-    private void PlayTransitionAnimation(string transitionType)
+    private IEnumerator PlayTransitionAnimation(string transitionType)
     {
-        TransitionManager.Instance.PlayTransition( transitionType );
+        yield return TransitionManager.Instance.PlayTransition( transitionType );
     }
     
 }
