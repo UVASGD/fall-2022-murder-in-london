@@ -163,6 +163,7 @@ public class CharacterOptionViews : MonoBehaviour
         }
         else inDialogue = false;
 
+        //mega scuffed :(
         if(!inDialogue && inInteract && buttonClicked)
         {
             GameObject buttonPanel = transform.GetChild(1).gameObject;
