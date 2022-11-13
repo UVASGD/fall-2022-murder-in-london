@@ -35,6 +35,7 @@ public class InteractionManager : MonoBehaviour
 
     private InteractionState currentState;
     private InteractionState nextState;
+    private string characterName;
     private Sprite characterImage;
     private List<string> characterOptionChoices;
 
@@ -55,12 +56,12 @@ public class InteractionManager : MonoBehaviour
             //playerMove --> talkToCharacter
             if (nextState == InteractionState.talkToCharacter && !hasUpdated)
             {
+                Debug.Log("changing state");    
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.SetValues(characterImage, characterOptionChoices);
+                characterPanelController.SetValues(characterImage, characterName, characterOptionChoices);
                 characterPanelController.Interact();
-
+                Debug.Log("interacted");
                 hasUpdated = true;
-
                 currentState = InteractionState.talkToCharacter;
             }
 
@@ -74,10 +75,10 @@ public class InteractionManager : MonoBehaviour
             if (nextState == InteractionState.playerMove && !hasUpdated)
             {
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.LeaveInteraction();
-                hasUpdated = true;
+                characterPanelController.LeaveInteraction(); //end interaction returns false when in dialogue mode
 
                 currentState = InteractionState.playerMove;
+                hasUpdated = true;
             }
 
         }
@@ -114,12 +115,14 @@ public class InteractionManager : MonoBehaviour
         nextState = InteractionState.playerMove;
         hasUpdated = false;
     }
-    public void SetToCharacterInteraction(Sprite newCharacterImage, List<string> newCharacterOptions)
+    public void SetToCharacterInteraction(Sprite newCharacterImage, string newCharactername, List<string> newCharacterOptions)
     {
         nextState = InteractionState.talkToCharacter;
         characterImage = newCharacterImage;
+        characterName = newCharactername;
         characterOptionChoices = newCharacterOptions;
         hasUpdated = false;
+        print("setted character interaction");
     }
     public void SetToExamineEvidence()
     {

@@ -37,10 +37,13 @@ namespace Cainos.PixelArtTopDown_Basic
 
                 GetComponent<Rigidbody2D>().velocity = speed * dir_dialogue;
 
-                if (Input.GetKeyUp(KeyCode.Z))
+                if(!FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
                 {
-                    Debug.Log("setting to playermovement");
-                    InteractionManager.Instance.SetToPlayerMovement();
+                    if (Input.GetKeyUp(KeyCode.Z))
+                    {
+                        Debug.Log("setting to playermovement");
+                        InteractionManager.Instance.SetToPlayerMovement();
+                    }
                 }
                 return;
             }
@@ -159,7 +162,8 @@ namespace Cainos.PixelArtTopDown_Basic
                 else
                 {
                     Debug.Log("setting to character Interaction");
-                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.character_options);
+                    Debug.Log(InteractionManager.Instance.GetInteractionState());
+                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.talkToNode ,targetFields.character_options);
                 }
             }
         }

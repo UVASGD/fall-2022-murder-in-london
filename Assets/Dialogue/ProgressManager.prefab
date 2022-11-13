@@ -113,6 +113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain
       objectReference: {fileID: 0}
+    - target: {fileID: 6506547276641607235, guid: 66f70f2739f773147b291e87b5b7644a,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f70f2739f773147b291e87b5b7644a, type: 3}
 --- !u!225 &717378755480086628 stripped
