@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Cainos/Pixel Art Top Down - Basic/kevin made this folder but didnt
+      know where to put it/kevins work.unity
+    guid: b56c4366c7b07c54c97993619c902ee9
   m_configObjects: {}
