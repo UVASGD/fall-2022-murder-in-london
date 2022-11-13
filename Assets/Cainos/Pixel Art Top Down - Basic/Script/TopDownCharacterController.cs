@@ -9,27 +9,47 @@ namespace Cainos.PixelArtTopDown_Basic
     {
         public float speed;
 
-        //because we are using the same button press for both starting and skipping dialogue they collide
-        //so we are going to make it so that the input gets turned off
+        // because we are using the same button press for both starting and skipping dialogue they collide
+        // so we are going to make it so that the input gets turned off
         private DialogueAdvanceInput dialogueInput;
         private Animator animator;
-        public float interactionRadius = 1f;
+        private DialogueRunner dialogueRunner;
+        public float interactionRadius = 0.75f;
         public int direction_facing = 0;
-
+        public double time = 0;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
             dialogueInput = FindObjectOfType<DialogueAdvanceInput>();
+            dialogueRunner = FindObjectOfType<DialogueRunner>();
+            dialogueRunner.AddCommandHandler<int>("textSpeed", changeTextSpeed);
             dialogueInput.enabled = false;
+        }
+        
+        private void changeTextSpeed(int speed)
+        {
+            FindObjectOfType<CustomLineView>().typewriterEffectSpeed = speed;
         }
 
 
         private void Update()
         {
-            InteractionManager.InteractionState currentState = InteractionManager.Instance.GetInteractionState();
+            // Check for change in dialog speed and change depending on current speed. 
+            if (Input.GetKeyUp(KeyCode.K))
+            {
+                    
+                    var cur = FindObjectOfType<CustomLineView>().typewriterEffectSpeed;
+                    if (cur == 50)
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 80;
+                    else if (cur == 80)
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 110;
+                    else
+                        FindObjectOfType<CustomLineView>().typewriterEffectSpeed = 50;
+                
+            }
             // Remove all player control when we're in dialogue
-            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || currentState != InteractionManager.InteractionState.playerMove)
+            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
             {
                 Vector2 dir_dialogue = Vector2.zero;
                 dir_dialogue.Normalize();
@@ -160,6 +180,7 @@ namespace Cainos.PixelArtTopDown_Basic
                 {
                     Debug.Log("setting to character Interaction");
                     InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.character_options);
+                    //FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
                 }
             }
         }

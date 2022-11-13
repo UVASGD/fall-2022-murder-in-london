@@ -57,11 +57,11 @@ public class InteractionManager : MonoBehaviour
             {
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
                 characterPanelController.SetValues(characterImage, characterOptionChoices);
+                hasUpdated = true;
+                currentState = InteractionState.talkToCharacter;
                 characterPanelController.Interact();
 
-                hasUpdated = true;
-
-                currentState = InteractionState.talkToCharacter;
+                
             }
 
             
