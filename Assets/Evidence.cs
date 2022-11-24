@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Evidence
+public class EvidenceOld
 {
     public string name;
     public string description;

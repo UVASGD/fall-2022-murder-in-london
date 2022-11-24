@@ -112,6 +112,9 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 CheckForNearbyNPC();
             }
+            if(Input.GetKeyUp(KeyCode.E) && InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.playerMove){
+                InteractionManager.Instance.SetToViewInventory();
+            }
         }
         public void PerformInteraction()
         {

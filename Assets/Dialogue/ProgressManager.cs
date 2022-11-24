@@ -29,11 +29,11 @@ public class ProgressManager : MonoBehaviour
 
     //track progress of player for entire game
     //this should keep track of progress in terms of scenes completed
-    private HashSet<string> gameProgressList = new();
+    public HashSet<string> gameProgressList = new();
 
     //track progress of player for scene
     //this should contain instances of "evidence discovered" or "interaction found"
-    private HashSet<string> sceneProgressList = new(); 
+    public HashSet<string> sceneProgressList = new(); 
 
     private HashSet<string> expectedSceneProgressList = new(); //expected progress by the end of the scene
 
