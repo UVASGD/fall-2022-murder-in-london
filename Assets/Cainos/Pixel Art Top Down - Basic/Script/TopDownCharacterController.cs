@@ -210,12 +210,14 @@ namespace Cainos.PixelArtTopDown_Basic
 
                 // Debug.Log(target);
                 Vector3 direction_to_target = (target.transform.position - this.transform.position);
-                //Debug.Log(direction_to_target);
-                //Debug.Log(raycast_direction);
-                //Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
+                Debug.Log(direction_to_target);
+                Debug.Log(raycast_direction);
+                Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
 
+                Debug.Log(target == null);
                 if (Vector3.Angle(direction_to_target, raycast_direction) > 49)
                 {
+                    Debug.Log("angle too small...?");
                     return;
                 }
                 
