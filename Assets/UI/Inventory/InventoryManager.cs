@@ -76,7 +76,7 @@ public class InventoryManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.D)){
                 updateSelected( selectedIcon + 1);
             }
-            if(Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.E)){
+            if(Input.GetKeyUp(KeyCode.Z) ){
                 InteractionManager.Instance.SetToPlayerMovement();
             }
         }else{
