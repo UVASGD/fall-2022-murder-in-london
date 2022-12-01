@@ -52,7 +52,7 @@ public class InventoryManager : MonoBehaviour
         evidenceIcons = iconParent.GetComponentsInChildren<Image>();
         iconBackgrounds = iconBackgroundParent.GetComponentsInChildren<Image>();
         //set up the icon colors
-        int iconMax = 8;    //TODO: update this to be length of array (need wifi to remember that lol)
+        int iconMax = evidenceIcons.Length;
         // set up the colors of all of the evidence Icons
         for(int i = 0; i<iconMax; i++){
             evidenceIcons[i].color = iconColor;
@@ -88,7 +88,7 @@ public class InventoryManager : MonoBehaviour
 
     // update which evidence should show up in the menu (called when opening menu)
     public void updateInventoryDisplay(){
-        int iconMax = 8;    //TODO: update this to be length of array (need wifi to remember that lol)
+        int iconMax = evidenceIcons.Length;
         // reset all of the evidence icons
         for(int i = 0; i<iconMax; i++){
             evidenceIcons[i].color = iconColor;

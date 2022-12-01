@@ -7,7 +7,6 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    // Start is called before the first frame update
     public static AudioManager instance;
     public bool muted = false;
     private bool wait = false;
@@ -36,7 +35,7 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        Play("Theme");
+        //Play("Theme");
     }
     private void Update()
     {
@@ -84,7 +83,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
