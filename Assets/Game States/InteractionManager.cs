@@ -31,6 +31,7 @@ public class InteractionManager : MonoBehaviour
         playerMove,
         talkToCharacter,
         examineEvidence,
+        viewInventory,
     }
 
     private InteractionState currentState;
@@ -58,11 +59,18 @@ public class InteractionManager : MonoBehaviour
             {
                 Debug.Log("changing state");    
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.SetValues(characterImage, characterName, characterOptionChoices);
-                characterPanelController.Interact();
-                Debug.Log("interacted");
+                characterPanelController.SetValues(characterImage, characterOptionChoices);
                 hasUpdated = true;
                 currentState = InteractionState.talkToCharacter;
+                characterPanelController.Interact();
+
+                
+            }
+            //playerMove --> view Inventory
+            if(nextState == InteractionState.viewInventory && !hasUpdated){
+                InventoryManager.Instance.updateInventoryDisplay();
+                currentState = InteractionState.viewInventory;
+                hasUpdated = true;
             }
 
             
@@ -87,6 +95,13 @@ public class InteractionManager : MonoBehaviour
         else if(currentState == InteractionState.examineEvidence)
         {
 
+        }
+        // current state: view inventory
+        else if(currentState == InteractionState.viewInventory){
+            if(nextState != InteractionState.viewInventory && !hasUpdated){
+                currentState = nextState;
+                hasUpdated = true;
+            }
         }
         else
         {
@@ -127,6 +142,10 @@ public class InteractionManager : MonoBehaviour
     public void SetToExamineEvidence()
     {
         nextState = InteractionState.examineEvidence;
+        hasUpdated = false;
+    }
+    public void SetToViewInventory(){
+        nextState = InteractionState.viewInventory;
         hasUpdated = false;
     }
 }
