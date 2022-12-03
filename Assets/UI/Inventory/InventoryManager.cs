@@ -37,6 +37,9 @@ public class InventoryManager : MonoBehaviour
     // list of the evidence Icons in the UI
     private Image[] evidenceIcons;
 
+    // Press Z to close/ press Z to present text
+    public TextMeshProUGUI instructions;
+
     //used to get a list of the evidence Icon backgrounds
     public GameObject iconBackgroundParent;
     // list of the evidence Icon backgrounds
@@ -67,7 +70,7 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         // check if in the viewing inventory state
-        if(InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory){
+        if(InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory || InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.presentEvidence){
             // if so, show the inventory and allow inputs
             inventoryMenu.SetActive(true);
             if(Input.GetKeyDown(KeyCode.A)){
@@ -78,6 +81,11 @@ public class InventoryManager : MonoBehaviour
             }
             if(Input.GetKeyUp(KeyCode.Z) ){
                 InteractionManager.Instance.SetToPlayerMovement();
+            }
+            if(InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory){
+                instructions.text = "";
+            }else{
+                instructions.text = "press Z to present this evidence";
             }
         }else{
             // if not, hide the inventory

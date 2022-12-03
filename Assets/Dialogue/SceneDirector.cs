@@ -39,6 +39,10 @@ public class SceneDirector : MonoBehaviour
                 "checkAchievement",
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
                 );
+            dialogueRunnerObject.AddCommandHandler<string, string>(
+                "requireEvidence",
+                PresentEvidence
+            );
         }
         else
         {
@@ -86,6 +90,10 @@ public class SceneDirector : MonoBehaviour
     private bool CheckIfPlayerCompleted(string nodeName)
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
+    }
+    private void PresentEvidence(string nameOfCurrentFile, string evidenceNeeded){
+        Debug.Log("THE THING WAS RUN");
+        InteractionManager.Instance.SetToPresentEvidence(nameOfCurrentFile, evidenceNeeded);
     }
     
 }
