@@ -1,6 +1,6 @@
 ﻿title: RuneStone
 ---
-<<playTransition fadeOutIn>>
+<<playTransition objectionShake>>
 RuneStone: Would you like some long dialogue?
 -> Yes
     <<jump printFitnessGram>>
