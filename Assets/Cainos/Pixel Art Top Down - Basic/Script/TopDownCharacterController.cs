@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Yarn.Unity;
 
 namespace Cainos.PixelArtTopDown_Basic
@@ -18,7 +19,6 @@ namespace Cainos.PixelArtTopDown_Basic
         public float interactionRadius = 0.75f;
         public int direction_facing = 0;
         public double time = 0;
-
         private void Start()
         {
             animator = GetComponent<Animator>();
@@ -36,6 +36,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
+
             // Check for change in dialog speed and change depending on current speed. 
             if (Input.GetKeyUp(KeyCode.K))
             {
@@ -72,7 +73,7 @@ namespace Cainos.PixelArtTopDown_Basic
                 {
                     dialogueInput.enabled = true;
                     //Debug.Log("running dialogue");
-                    Debug.Log(dialogueInput.enabled);
+                    //Debug.Log(dialogueInput.enabled);
                 }
                 return;
             }
@@ -138,6 +139,14 @@ namespace Cainos.PixelArtTopDown_Basic
             if(Input.GetKeyUp(KeyCode.E) && InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.playerMove){
                 InteractionManager.Instance.SetToViewInventory();
             }
+            //if (Input.GetKeyUp(KeyCode.G))
+            //{
+            //    CanvasGroup[] groups = FindObjectsOfType<CanvasGroup>();
+            //    foreach (CanvasGroup i in groups)
+            //    {
+            //        Debug.Log(i);
+            //    }
+            //}
         }
         public void PerformInteraction(CharacterOptionFields targetFields)
         {
@@ -222,7 +231,7 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             Debug.Log("entering coroutine");
             target.interact();
-            dialogueInput.enabled = true;
+            //dialogueInput.enabled = true;
             FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
             yield return new WaitForSeconds(0);
         }

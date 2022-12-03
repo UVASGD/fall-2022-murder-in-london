@@ -158,7 +158,10 @@ public class CharacterOptionViews : MonoBehaviour
         mainCanvasGroup.alpha = 0;
         mainCanvasGroup.interactable = false;
         mainCanvasGroup.blocksRaycasts = true;
-        image = null; 
+        image = null;
+        //CanvasGroup buttonPanel = transform.GetChild(1).gameObject.GetComponent<CanvasGroup>();
+        //buttonPanel.blocksRaycasts = false;
+        
     }
 
 
