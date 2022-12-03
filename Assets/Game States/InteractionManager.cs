@@ -66,7 +66,7 @@ public class InteractionManager : MonoBehaviour
             {
                 Debug.Log("changing state");
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.SetValues(characterImage, characterPanelController.characterName, characterOptionChoices); // note from Jimmy: I had to change this line to get it to compile, took my best guess. If it's breaking check the name field in this
+                characterPanelController.SetValues(characterImage, characterName, characterOptionChoices); // note from Jimmy: I had to change this line to get it to compile, took my best guess. If it's breaking check the name field in this
                 hasUpdated = true;
                 currentState = InteractionState.talkToCharacter;
                 characterPanelController.Interact();
@@ -98,6 +98,7 @@ public class InteractionManager : MonoBehaviour
                 characterPanelController.LeaveInteraction(); //end interaction returns false when in dialogue mode
 
                 currentState = InteractionState.playerMove;
+
                 hasUpdated = true;
             }
             // talkToCharacter --> presentEvidence

@@ -41,7 +41,8 @@ public class ProgressManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        expectedSceneProgressList.Add("Key");
+        expectedSceneProgressList.Add("Handgun");
     }
 
     //transition to new scene, need a new set of requirements to meet
@@ -76,7 +77,10 @@ public class ProgressManager : MonoBehaviour
         //is this an expected achievement the player should get?
         if (expectedSceneProgressList.Contains(achievement))
         {
-            sceneProgressList.Add(achievement);
+            if (!sceneProgressList.Contains(achievement)){
+                sceneProgressList.Add(achievement);
+            }
+            
         }
         else
         {

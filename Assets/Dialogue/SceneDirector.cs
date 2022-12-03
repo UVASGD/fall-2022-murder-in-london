@@ -43,6 +43,7 @@ public class SceneDirector : MonoBehaviour
                 "requireEvidence",
                 PresentEvidence
             );
+
         }
         else
         {
@@ -91,6 +92,7 @@ public class SceneDirector : MonoBehaviour
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
     }
+    
     private void PresentEvidence(string nameOfCurrentFile, string evidenceNeeded){
         Debug.Log("THE THING WAS RUN");
         InteractionManager.Instance.SetToPresentEvidence(nameOfCurrentFile, evidenceNeeded);
