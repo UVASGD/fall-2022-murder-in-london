@@ -17,4 +17,4 @@ MonoBehaviour:
     crime.
   icon: {fileID: 21300000, guid: 4d7497fa8673083419e340dc474a06e3, type: 3}
   isDefaultItem: 0
-  discovered: 1
+  discovered: 0
