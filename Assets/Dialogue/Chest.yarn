@@ -1,23 +1,5 @@
 ﻿title: Chest
 ---
-<<if checkAchievement("chest") is false>>
-Player: The chest is locked. Unlock?
--> Unlock chest
-    <<jump UnlockChest>>
--> Leave as is
-    <<jump End>>
-<<else>>
-Player: The chest is unlocked. Nothing was inside.
-<<jump End>>
-<<endif>>
-===
-
-title: UnlockChest
----
-Player: The chest is now unlocked!
-<<achievement chest>>
-===
-
-title: End
----
+Player: Huh, a chest with a lock. Do I have a key?
+<< requireEvidence "Chest" "Key">>
 ===
