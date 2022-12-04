@@ -6,6 +6,7 @@ Viola Villin: Er, well...
 Viola Villin: There's nothing suspicious about a bit of passion, is there?
 Christine: Really? Because it seems pretty suspicious to me. Not only that but you had plenty of opportunities during the film to enter his booth.
 Viola Villin: Hmm, well, I may have had opportunities but I did not seize them. I never visited the booth that night.
+<<showHealth>>
 Christine: This is a lie, and I think I have the evidence to prove it.
 << requireEvidence "Viola" "Handkerchief" >>
 ===

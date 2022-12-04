@@ -1,11 +1,23 @@
 ﻿title: AgnesIncorrect
 tags:
 ---
+<<showHealth>>
 Christine: This piece of evidence proves you were in the booth last night.
 Agnes Painsworth: I have no idea what you're talking about.
 Agnes Painsworth: As a very famous actor, I take pride in what belongings I keep on my person.
 Agnes Painsworth: Whatever that thing is, it's definitely not something that would belong with me.
 Christine: (That disgust feels pretty genuine. This isn't the evidence I needed.)
-Christine: Right, of course. That was just a little joke. The evidence that really proves you were in the booth last night is this:
-<< requireEvidence "Agnes" "Pocket Watch" >>
+<<updateHealth -1>>
+
+<<if PlayerLost() is true>>
+    <<loseGame "AgnesLose">>
+    <<jump AgnesEnd>>
+<<else>>
+    Christine: Right, of course. That was just a little joke. The evidence that really proves you were in the booth last night is this:
+    <<requireEvidence "Agnes" "Pocket Watch" >>
+<<endif>>
+
+===
+title:AgnesEnd
+---
 ===

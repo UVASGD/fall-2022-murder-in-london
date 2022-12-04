@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SceneDirector : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class SceneDirector : MonoBehaviour
 
     public static SceneDirector Instance { get { return _sceneDirector; } }
 
-
+    private bool loseGame = false;
+    private string loseGameFile = "";
+    private bool loseGameDialogueRan = false;
     private void Awake()
     {
         if (_sceneDirector != null && _sceneDirector != this)
@@ -44,6 +47,10 @@ public class SceneDirector : MonoBehaviour
                 "GetSceneNumber",
                 () => { return GetSceneNumber(); } //lambda function
                 );
+            dialogueRunnerObject.AddFunction(
+                "PlayerLost",
+                () => { return PlayerLost(); } //lambda function
+                );
             dialogueRunnerObject.AddCommandHandler<string, string>(
                 "requireEvidence",
                 PresentEvidence
@@ -52,6 +59,23 @@ public class SceneDirector : MonoBehaviour
                 "transitionScene",
                 TransitionToNextScene
             );
+            dialogueRunnerObject.AddCommandHandler(
+                "showHealth",
+                ShowHealth
+            );
+            dialogueRunnerObject.AddCommandHandler(
+                "hideHealth",
+                HideHealth
+            );
+            dialogueRunnerObject.AddCommandHandler<int>(
+                "updateHealth",
+                UpdateHealth
+            );
+            dialogueRunnerObject.AddCommandHandler<string>(
+                "loseGame",
+                LoseGame
+            );
+
         }
         else
         {
@@ -63,10 +87,12 @@ public class SceneDirector : MonoBehaviour
     #endregion 
 
     // Start is called before the first frame update
-
     void Start()
     {
         //set initial achievements
+        loseGame = false;
+        loseGameFile = "";
+        loseGameDialogueRan = false;
         List<string> requiredAchievements = new();
         if(ProgressManager.Instance){
             ProgressManager.Instance.SetMultipleExpectedProgressList(requiredAchievements);
@@ -76,8 +102,26 @@ public class SceneDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if all achievements found, move onto next scen
-        if(ProgressManager.Instance){
+        if (loseGame == true)
+        {
+            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == false)
+            {
+                if (loseGameDialogueRan == false)
+                {
+                    print("starting node: " + loseGameFile);
+                    FindObjectOfType<DialogueRunner>().StartDialogue(loseGameFile);
+                    loseGameDialogueRan = true;
+                }
+                else
+                {
+                    ProgressManager.Instance.LoseScene();
+
+                }
+            }
+        }
+
+        //if all achievements found, move onto next scene
+        if (ProgressManager.Instance){
             if (ProgressManager.Instance.SceneComplete())
             {
                 if(FindObjectOfType<DialogueRunner>().IsDialogueRunning == false){
@@ -109,5 +153,31 @@ public class SceneDirector : MonoBehaviour
     private void TransitionToNextScene(){
         ProgressManager.Instance.FinishScene(new HashSet<string>());
     }
+    private void ShowHealth()
+    {
+        HealthController.Instance.ShowHealth();
+    }
+    private void HideHealth()
+    {
+        HealthController.Instance.HideHealth();
+    }
+
+    private bool PlayerLost()
+    {
+        return HealthController.Instance.getPlayerHealth() <= 0;
+    }
+    //Should be negative to subtract from current health
+    private void UpdateHealth(int healthDelta)
+    {
+        int currentHealth = HealthController.Instance.getPlayerHealth();
+        HealthController.Instance.UpdateHealth(currentHealth + healthDelta);
+    }
+    private void LoseGame(string filename)
+    {
+        print("Lost game, running yarn script?");
+        loseGame = true;
+        loseGameFile = filename;
+    }
+
     
 }

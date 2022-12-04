@@ -1,11 +1,22 @@
 ﻿title: EndingIncorrect
 tags:
 ---
+<<showHealth>>
 Christine: You used your pocket watch in order to time the murder.
 Agne Painsworth: ...
 Agnes Painsworth: ...
 Agnes Painsworth: ...
 Agnes Painsworth: What? How would I use that to time the murder?
-Christine: Erm, exuse me, the thing I meant to show you was this:
-<< requireEvidence "Ending" "Pocket Watch" >>
+<<updateHealth -1>>
+
+<<if PlayerLost() is true>>
+    <<loseGame "FinalLose">>
+    <<jump EndingIncorrectEnd>>
+<<else>>
+    Christine: Erm, exuse me, the thing I meant to show you was this:
+    << requireEvidence "Ending" "Pocket Watch" >>
+<<endif>>
+===
+title:EndingIncorrectEnd
+---
 ===

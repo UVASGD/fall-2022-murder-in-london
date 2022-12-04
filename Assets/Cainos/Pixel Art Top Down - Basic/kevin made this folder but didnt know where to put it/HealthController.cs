@@ -9,7 +9,7 @@ public class HealthController : MonoBehaviour
 
     public static HealthController Instance { get { return _instance; } }
 
-    private int playerHealth = 8; // random number corresponding to number of hearts images
+    private int playerHealth = 4; // random number corresponding to number of hearts images
 
     public CanvasGroup allhearts;
 
@@ -28,12 +28,14 @@ public class HealthController : MonoBehaviour
             _instance = this;
         }
         allhearts = GetComponent<CanvasGroup>();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
     {
-        playerHealth = 4;
+        playerHealth = 5;
         UpdateHealth(playerHealth);
+        HideHealth();
     }
 
     public void UpdateHealth(int newHealth)
@@ -54,5 +56,9 @@ public class HealthController : MonoBehaviour
     public void HideHealth()  
     {  
         allhearts.alpha = 0;
+    }
+    public int getPlayerHealth()
+    {
+        return playerHealth;
     }
 }

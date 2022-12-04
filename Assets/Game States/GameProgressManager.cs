@@ -4,6 +4,24 @@ using UnityEngine;
 
 public class GameProgressManager : MonoBehaviour
 {
+    private static GameProgressManager _gameProgressManager;
+
+    public static GameProgressManager Instance { get { return _gameProgressManager; } }
+
+
+    private void Awake()
+    {
+        if (_gameProgressManager != null && _gameProgressManager != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _gameProgressManager = this;
+        }
+        DontDestroyOnLoad(this);
+    }
+
     // Start is called before the first frame update
     public static List<string> Scene2Requirements = new List<string>
     {
@@ -30,9 +48,5 @@ public class GameProgressManager : MonoBehaviour
     void Update()
     {
         
-    }
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
     }
 }

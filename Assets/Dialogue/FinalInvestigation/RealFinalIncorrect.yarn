@@ -1,9 +1,20 @@
 ﻿title: RealFinalIncorrect
 tags:
 ---
+<<showHealth>>
 Christine: This is why Kent couldn't have murdered anyone that night.
 Agnes Painsworth: ...Why would this prevent him from murdering anyone?
-Christine: (... he's got a point there)
-Christine: Excuse me, that was just a slip of the tongue. This is why Kent couldn't have murdered anyone:
-<< requireEvidence "RealFinal" "Notes" >>
+Christine: (... he's got a point there.)
+<<updateHealth -1>>
+
+<<if PlayerLost() is true>>
+    <<loseGame "FinalLose">>
+    <<jump RealFinalIncorrectEnd>>
+<<else>>
+    Christine: Excuse me, that was just a slip of the tongue. This is why Kent couldn't have murdered anyone:
+    << requireEvidence "RealFinal" "Notes" >>
+<<endif>>
+===
+title:RealFinalIncorrectEnd
+---
 ===

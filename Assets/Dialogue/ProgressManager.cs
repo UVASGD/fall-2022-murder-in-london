@@ -81,6 +81,7 @@ public class ProgressManager : MonoBehaviour
         //expectedSceneProgressList.Add("Key");
         //expectedSceneProgressList.Add("Handgun");
         StartCoroutine(FadeIn());
+        HealthController.Instance.HideHealth();
         InventoryManager.Instance.updateInventoryDisplay();
     }
 
@@ -210,9 +211,14 @@ public class ProgressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
+    public void LoseScene()
+    {
+        HealthController.Instance.UpdateHealth(5);
+        StartCoroutine(FadeOut());
+        StartCoroutine(EndScene());
+    }
     //coroutine that fades outs then fades in
     //used for testing the progress manager
     IEnumerator FadeOutFadeIn()
@@ -229,5 +235,16 @@ public class ProgressManager : MonoBehaviour
         yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 0.5f));
 
         yield return new WaitForSeconds(0.5f);
+    }
+    IEnumerator FadeOut()
+    {
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 0.5f));
+
+        yield return new WaitForSeconds(0.5f);
+    }
+    IEnumerator EndScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

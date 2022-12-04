@@ -1,10 +1,21 @@
 ﻿title: FinalIncorrect
 tags:
 ---
+<<showHealth>>
 Christine: This piece of evidence shows why that theatre didn't recognize the gunshots.
 Agnes Painsworth: What? Why would this stop them from hearing the murder? Is it supposed to go over their ears or something?
 Christine: (... he's right. This evidence isn't enough to explain why the gunshots went unreported.)
-Christine: (Let's see... a gunshot rang out in a crowded theatre. Why wouldn't anyone panic?)
-Christine: Wait a minute. The evidence that really explains this discrepancy is this:
-<< requireEvidence "Final" "Poster" >>
+<<updateHealth -1>>
+
+<<if PlayerLost() is true>>
+    <<loseGame "FinalLose">>
+    <<jump FinalIncorrectEnd>>
+<<else>>
+    Christine: (Let's see... a gunshot rang out in a crowded theatre. Why wouldn't anyone panic?)
+    Christine: Wait a minute. The evidence that really explains this discrepancy is this:
+    << requireEvidence "Final" "Poster" >>
+<<endif>>
+===
+title:FinalIncorrectEnd
+---
 ===
