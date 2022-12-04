@@ -1434,7 +1434,7 @@ PrefabInstance:
     - target: {fileID: 2639417616845356774, guid: d420d0b85612df84794d4f37bcf60a7c,
         type: 3}
       propertyPath: continueActionKeyCode
-      value: 122
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 4980463419208647849, guid: d420d0b85612df84794d4f37bcf60a7c,
         type: 3}
