@@ -40,6 +40,10 @@ public class SceneDirector : MonoBehaviour
                 "checkAchievement",
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
                 );
+            dialogueRunnerObject.AddFunction(
+                "GetSceneNumber",
+                () => { return GetSceneNumber(); } //lambda function
+                );
             dialogueRunnerObject.AddCommandHandler<string, string>(
                 "requireEvidence",
                 PresentEvidence
@@ -77,15 +81,12 @@ public class SceneDirector : MonoBehaviour
         if(ProgressManager.Instance){
             if (ProgressManager.Instance.SceneComplete())
             {
-                //when dialogue is done, do the scene change
-                if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == false)
-                {
+                if(FindObjectOfType<DialogueRunner>().IsDialogueRunning == false){
                     //Debug.Log("changing scene");
-                    List<string> nextExpectedAchievements = new();
-                    nextExpectedAchievements.Add("chest");
+                    HashSet<string> nextExpectedAchievements = new();
+                    //nextExpectedAchievements.Add("chest");
                     ProgressManager.Instance.FinishScene(nextExpectedAchievements);
                 }
-                
             }
         }
     }
@@ -95,10 +96,15 @@ public class SceneDirector : MonoBehaviour
     {
         ProgressManager.Instance.ProgressScene(achievement);
     }
+    private int GetSceneNumber()
+    {
+        return ProgressManager.Instance.getInvestigationScene();
+    }
     private bool CheckIfPlayerCompleted(string nodeName)
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
     }
+    
     private void PresentEvidence(string nameOfCurrentFile, string evidenceNeeded){
         InteractionManager.Instance.SetToPresentEvidence(nameOfCurrentFile, evidenceNeeded);
     }

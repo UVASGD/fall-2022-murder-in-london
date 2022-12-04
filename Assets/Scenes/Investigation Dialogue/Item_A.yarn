@@ -1,5 +1,10 @@
 ﻿title: Item_A
 tags:
 ---
-Player: A pot.
+<<if checkAchievement("Key") is false>>
+Player: A pot. I found a key!
+<<achievement Key>>
+<<else>>
+Player: A pot. I found a key in here earlier.
+<<endif>>
 ===

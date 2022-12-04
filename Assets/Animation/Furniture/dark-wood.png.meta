@@ -1,0 +1,2081 @@
+fileFormatVersion: 2
+guid: 15a2d927a809d624f9bfe5f992d76abc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dark-wood_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 813
+        width: 128
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c67cf9e8da3d6e41a620acc69f5b4ae
+      internalID: -1571120429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 928
+        width: 416
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b0fc37e0e0625419280d9638751673
+      internalID: 653658312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 870
+        width: 54
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d170374491ba3f34c9b9b0a3f09514da
+      internalID: 437648323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 800
+        width: 192
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d677b1e1217e9458eedfd27d20b638
+      internalID: -1423505040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_4
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 912
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791113a384e4f9b4e95e0ef037806a36
+      internalID: 1572674998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_5
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 920
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498e87e78bea9984d82a79cac07046ed
+      internalID: -1570819839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_6
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 903
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a35ba5db4ef92c4fbd73f9d941bd1a8
+      internalID: -1858341165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_7
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 903
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6557196ac04ee646a1925ee319e80a5
+      internalID: 741872273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_8
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 904
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3701eccb5a372b749bcf630f4fa9deff
+      internalID: -1480050141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 903
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a784aa0ec6a50f4dab72d628d16adcc
+      internalID: 2107606823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_10
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 903
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98ec1d6e1b57a04da059836b0a593a0
+      internalID: 1629056831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 608
+        width: 118
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f48b273ea5131f4f855578db50a4a3c
+      internalID: 1881894083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_12
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 837
+        width: 128
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1acbeb9a4a3184c8795c773563de7f
+      internalID: 2106457942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 748
+        width: 96
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312a698e2f430b94eb22ec253d352f9f
+      internalID: -1504361056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_14
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 740
+        width: 24
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a9c3ff1d3a4b34e8b4590cf30f80d2
+      internalID: 1600452004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 743
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f673981574976940862c9a0db8a9b32
+      internalID: 330179091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_16
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 742
+        width: 18
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc89e336afe7934f847d66e524f5f89
+      internalID: 1741611559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_17
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 772
+        width: 69
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7b23fb296234243b43a3f86f9842e5
+      internalID: -1339794095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_18
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 743
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd541aaeecf2b843ad66942079e12c1
+      internalID: -1173326627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_19
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 772
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 035c488da44b42249a86b2be707d8f94
+      internalID: -1654278632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 769
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd3eda92729fc74bb46e41d105fb95a
+      internalID: -586247964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_21
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 740
+        width: 49
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce5f60e98f20824485d3f2343f586aa
+      internalID: 832361703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_22
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 741
+        width: 80
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb999e01559db7d45bd9cf1e37154883
+      internalID: -1680322600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_23
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 740
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8592d5ec4d842408013bedf90d7002
+      internalID: 1364753510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_24
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 737
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091f3813ff7946742bca91f237fbe097
+      internalID: 174453102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 192
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fdef5e06f5e6849a3ecf789c1416e9
+      internalID: 452137040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 608
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704c5a39e5d5ae640b8d1911801030a3
+      internalID: -442638411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 192
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f159bd7748d41ca45833d9fddc1a17e1
+      internalID: 683745051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4b9b29d6298454cbcfefbf529c3a02
+      internalID: 39436908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_29
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 549
+        width: 62
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac6b7fbdfab7454ab84b8cf47a395d7
+      internalID: -840308805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 544
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4e9e117dd34af49a21e4a0130d9db9
+      internalID: 221275519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_31
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 544
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73df6602baed4e94fba13a71b697c608
+      internalID: -1625174088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 522
+        width: 64
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939f8b04d805bda4cb7f4961b756ace1
+      internalID: -977327201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 522
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21d30b6b54221f4dbd964bc36d98ecb
+      internalID: 53361126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_34
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 353
+        width: 26
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55944d941fbac5c459df272633bb2ef4
+      internalID: -219768830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_35
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 416
+        width: 24
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529f070fffc437048821838df8c04e37
+      internalID: 1539295673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_36
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 416
+        width: 6
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56ea08166e26714c8f780e885cf1ad4
+      internalID: -458016373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 385
+        width: 24
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860f9b2bf87637d47be53a4388957bae
+      internalID: 1090378164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 24
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092e5d11cd337854182ecef603cd1332
+      internalID: -1970494391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_39
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 416
+        width: 24
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c22cf6a05c5bdb40bab845bdd6e1ddf
+      internalID: 1954303022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_40
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 416
+        width: 6
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a7e2e3ed39bc04180e01c181ef088f
+      internalID: 1453456042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 416
+        width: 6
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687c08ee8b8f3aa41bc8590b2b76d259
+      internalID: 1503809841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_42
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 416
+        width: 24
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ce502906616f64a9f365e067ba016d
+      internalID: 1642731793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_43
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 416
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d706cda7bbe7eb4badcbbe5b8ae8fe5
+      internalID: 1747277898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_44
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 416
+        width: 5
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917aa6837aa25aa48939d1f9fe8dcb37
+      internalID: -669904875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_45
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 416
+        width: 5
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6b928f2362ac6469b316d28acb0b96
+      internalID: 280524563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_46
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 416
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6f02dd5456e104183a686578aa7b98
+      internalID: -1065995839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_47
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 449
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b03ce1dcc0e1644a29478b1d594be8
+      internalID: -1355167435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_48
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 449
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4bcf498849f2646aeaf519e344811a
+      internalID: 1951192097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_49
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 416
+        width: 25
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a5ae8f89a68db40982f122c8aaa4a1
+      internalID: -935849763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_50
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 417
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0796aea49bd0c384ebca95549f5b5087
+      internalID: 1243248054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_51
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 417
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017ee874e2a4c534aa02466a26e310ff
+      internalID: -255445570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 256
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83968985087c66b458d18db86c36b20c
+      internalID: 1122676383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_53
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0549f801886b94298ce9e629f9fabd
+      internalID: -1718586248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_54
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 320
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549f6644d782ed1418cf0bd7b0a0263a
+      internalID: 754244578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_55
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 288
+        width: 87
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17d71654308d9545a1d575a75479487
+      internalID: 50441867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_56
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4ff51a2b829a7429ff1b227da0d0d8
+      internalID: -1777325581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_57
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 384
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec72315499756241ac27eaf2e643bb6
+      internalID: 216034354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_58
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 353
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165786bf30621fa4db618a8175b40141
+      internalID: 308397304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_59
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 352
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0578dc9f9256441801808afc64757d
+      internalID: 1799530070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_60
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 352
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee96e8f58e9058d47bb5c5d2791fedbc
+      internalID: -811558646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_61
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 288
+        width: 26
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5152cb2cb99362a4db968ce6b8df7067
+      internalID: -1105860040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_62
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 288
+        width: 25
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc56f1f08ab499498e9a40296de24de
+      internalID: -2090889128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_63
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 321
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65f84b533e355c44b62eaf6c43c1266
+      internalID: 296617991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_64
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 321
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bee013fc3c32bf428cbaa1af2938e9b
+      internalID: -629012564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_65
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 288
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd5d3fe35c3efb4aa8a512a97ab6b7b
+      internalID: -594514574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_66
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 289
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a9d5adc928a8749ab224d66ecb8b92
+      internalID: -1483101007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_67
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 289
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983f95a4296269944a15acc118138e9a
+      internalID: -2101310190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_68
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 192
+        width: 92
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc591c380cdf7344babb2a7395c4181a
+      internalID: 852698495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_69
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 192
+        width: 92
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3c9b4b83ba12a43b7ab2b3bfe83bff
+      internalID: 345069237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_70
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 205
+        width: 18
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab3e5717aec6974d86c8def2f1c0368
+      internalID: -1195583272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_71
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 205
+        width: 18
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28ffcbe59dfebe468fb3dfc28cf7c2f
+      internalID: 1095154543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_72
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 205
+        width: 18
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0aecdb2d44b98c4aa4debe78e31fcaa
+      internalID: -1107478493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_73
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 200
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6beb60cdbb27e41a646d3b2d238360
+      internalID: -1102255723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_74
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 220
+        width: 12
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607af0fb8d0167f4d8e7d609239e54be
+      internalID: -1642500539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 64
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abcb43ccf9afd841a04073b357bdaa2
+      internalID: 716059691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_76
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 65
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be24bc1a55043742b51cb917b15ed81
+      internalID: 522720770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_77
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 107
+        width: 95
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a230c3cf06c8fc4e96902449db3e65a
+      internalID: -1099696335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_78
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 128
+        width: 80
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0635e5c03cc2f1a42ba57d8760d34998
+      internalID: -1033988105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_79
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 96
+        width: 29
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5e4a50c7f47f14aae3883d4820fa9c
+      internalID: 1725922832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_80
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 105
+        width: 21
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff97f5dd3cdd61d479da8e86731eefce
+      internalID: -1823366516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_81
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 96
+        width: 90
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3167143920a0b4aa47b0c80678c5be
+      internalID: -959153942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_82
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 111
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d357698f9b68dc447af8d208dd659085
+      internalID: 1391593734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_83
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 100
+        width: 65
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024e34e34d0e2734cbf6e139f7261803
+      internalID: -1614273273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a0cc344552cda498eeaeec6ceb333a
+      internalID: 1947474470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_85
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd75e10f41e6cb4bb226bd85901fb17
+      internalID: -1711088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_86
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 13
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb0d730a71d94346938467513b29677
+      internalID: -8809330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_87
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 13
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da64043eb1bf24d4197465c4f06f97dd
+      internalID: 978626288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark-wood_88
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 32
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0ce1679d3dfb849a6582a9b209edf9
+      internalID: -277141412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      dark-wood_8: -1480050141
+      dark-wood_2: 437648323
+      dark-wood_83: -1614273273
+      dark-wood_74: -1642500539
+      dark-wood_23: 1364753510
+      dark-wood_4: 1572674998
+      dark-wood_56: -1777325581
+      dark-wood_5: -1570819839
+      dark-wood_1: 653658312
+      dark-wood_13: -1504361056
+      dark-wood_10: 1629056831
+      dark-wood_82: 1391593734
+      dark-wood_35: 1539295673
+      dark-wood_17: -1339794095
+      dark-wood_24: 174453102
+      dark-wood_12: 2106457942
+      dark-wood_48: 1951192097
+      dark-wood_47: -1355167435
+      dark-wood_27: 683745051
+      dark-wood_44: -669904875
+      dark-wood_7: 741872273
+      dark-wood_60: -811558646
+      dark-wood_45: 280524563
+      dark-wood_50: 1243248054
+      dark-wood_0: -1571120429
+      dark-wood_49: -935849763
+      dark-wood_19: -1654278632
+      dark-wood_73: -1102255723
+      dark-wood_32: -977327201
+      dark-wood_28: 39436908
+      dark-wood_88: -277141412
+      dark-wood_6: -1858341165
+      dark-wood_53: -1718586248
+      dark-wood_65: -594514574
+      dark-wood_64: -629012564
+      dark-wood_14: 1600452004
+      dark-wood_55: 50441867
+      dark-wood_66: -1483101007
+      dark-wood_72: -1107478493
+      dark-wood_46: -1065995839
+      dark-wood_71: 1095154543
+      dark-wood_61: -1105860040
+      dark-wood_75: 716059691
+      dark-wood_76: 522720770
+      dark-wood_3: -1423505040
+      dark-wood_34: -219768830
+      dark-wood_85: -1711088
+      dark-wood_87: 978626288
+      dark-wood_31: -1625174088
+      dark-wood_78: -1033988105
+      dark-wood_52: 1122676383
+      dark-wood_36: -458016373
+      dark-wood_22: -1680322600
+      dark-wood_54: 754244578
+      dark-wood_43: 1747277898
+      dark-wood_67: -2101310190
+      dark-wood_37: 1090378164
+      dark-wood_9: 2107606823
+      dark-wood_81: -959153942
+      dark-wood_33: 53361126
+      dark-wood_68: 852698495
+      dark-wood_11: 1881894083
+      dark-wood_70: -1195583272
+      dark-wood_59: 1799530070
+      dark-wood_25: 452137040
+      dark-wood_86: -8809330
+      dark-wood_21: 832361703
+      dark-wood_51: -255445570
+      dark-wood_63: 296617991
+      dark-wood_39: 1954303022
+      dark-wood_69: 345069237
+      dark-wood_57: 216034354
+      dark-wood_16: 1741611559
+      dark-wood_80: -1823366516
+      dark-wood_20: -586247964
+      dark-wood_30: 221275519
+      dark-wood_84: 1947474470
+      dark-wood_18: -1173326627
+      dark-wood_15: 330179091
+      dark-wood_42: 1642731793
+      dark-wood_29: -840308805
+      dark-wood_79: 1725922832
+      dark-wood_38: -1970494391
+      dark-wood_58: 308397304
+      dark-wood_77: -1099696335
+      dark-wood_26: -442638411
+      dark-wood_40: 1453456042
+      dark-wood_62: -2090889128
+      dark-wood_41: 1503809841
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,3 +1,4 @@
+using Cainos.PixelArtTopDown_Basic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -95,6 +96,7 @@ public class CharacterOptionViews : MonoBehaviour
     }
     public void LeaveInteraction()
     {
+        
         StartCoroutine(FadeOut(fadeTime, EndInteraction));
         inInteract = false;
     }
@@ -117,10 +119,15 @@ public class CharacterOptionViews : MonoBehaviour
         buttonPanelCanvasGroup.blocksRaycasts = false;
         buttonPanelCanvasGroup.interactable = false;
         buttonPanelCanvasGroup.gameObject.SetActive(false);
+        mainCanvasGroup.blocksRaycasts = false;
+        
+        //Debug.Log(name);
 
         try
         {
             FindObjectOfType<DialogueRunner>().StartDialogue(name + "_" + buttonNo.ToString());
+            //FindObjectOfType<TopDownCharacterController>().dialogueInput.enabled = true;
+
         }
 
         catch (Exception e){
@@ -139,18 +146,22 @@ public class CharacterOptionViews : MonoBehaviour
     {
         buttonClicked = false;
         buttonPanel.SetActive(true);
-        buttonCanvasGroup.alpha = 1;
+        buttonCanvasGroup.alpha = 1;    
         buttonCanvasGroup.blocksRaycasts = true;
         buttonCanvasGroup.interactable = true;
-        //buttonCanvasGroup.gameObject.SetActive(true);
+        buttonCanvasGroup.gameObject.SetActive(true);
+        mainCanvasGroup.blocksRaycasts = true;
     }
     void EndInteraction()
     {
        
         mainCanvasGroup.alpha = 0;
         mainCanvasGroup.interactable = false;
-        mainCanvasGroup.blocksRaycasts = false;
-        image = null; 
+        mainCanvasGroup.blocksRaycasts = true;
+        image = null;
+        //CanvasGroup buttonPanel = transform.GetChild(1).gameObject.GetComponent<CanvasGroup>();
+        //buttonPanel.blocksRaycasts = false;
+        
     }
 
 
@@ -164,7 +175,7 @@ public class CharacterOptionViews : MonoBehaviour
         else inDialogue = false;
 
         //mega scuffed :(
-        if(!inDialogue && inInteract && buttonClicked)
+        if (!inDialogue && inInteract && buttonClicked)
         {
             GameObject buttonPanel = transform.GetChild(1).gameObject;
             CanvasGroup buttonPanelCanvasGroup = buttonPanel.GetComponent<CanvasGroup>();

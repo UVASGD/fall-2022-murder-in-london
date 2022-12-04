@@ -1,0 +1,18 @@
+﻿title: Handgun
+tags:
+---
+<<if GetSceneNumber() == 1 || checkAchievement("Poster") is false>>
+    Christine: The fireplace sure is dusty. Can't see anything inside. Was it used recently?
+<<else>>
+    <<if checkAchievement("Handgun") is false>>
+        Christine: This is a handgun! The case is good as solved!
+        <<achievement Handgun>>
+        Handgun quickly stashed away.
+        Christine: Time to end this!
+    <<else>>
+        Christine: It's time to confront the killer, once and for all!
+    <<endif>>
+    
+<<endif>>
+
+===

@@ -16,4 +16,4 @@ MonoBehaviour:
   description: A strange key that I found.
   icon: {fileID: 21300000, guid: 536508dfdf71a53468fd61d15eb0d931, type: 3}
   isDefaultItem: 0
-  discovered: 1
+  discovered: 0

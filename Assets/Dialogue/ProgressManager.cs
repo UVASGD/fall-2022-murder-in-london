@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using Yarn.Unity;
 
@@ -41,7 +43,34 @@ public class ProgressManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        List<string> expectedAchievements = new();
+        List<string> currentAchievements = new();
+        int current_scene = getInvestigationScene();
+        if(current_scene == 1)
+        {
+            Debug.Log("entering current scene");
+            expectedAchievements = GameProgressManager.Scene2Requirements;
+            
+        }
+        else
+        {
+            currentAchievements = GameProgressManager.Scene2Requirements;
+            expectedAchievements = GameProgressManager.Scene4Requirements;
+        }
+        foreach (string s in expectedAchievements)
+        {
+            expectedSceneProgressList.Add(s);
+        }
+        foreach(string s in currentAchievements)
+        {
+            sceneProgressList.Add(s);
+        }
+        foreach (string s in expectedSceneProgressList)
+        {
+            Debug.Log(s);
+        }
+        //expectedSceneProgressList.Add("Key");
+        //expectedSceneProgressList.Add("Handgun");
     }
 
     //transition to new scene, need a new set of requirements to meet
@@ -52,6 +81,19 @@ public class ProgressManager : MonoBehaviour
         sceneProgressList.Clear(); 
     }
 
+    public int getInvestigationScene()
+    {
+        string current_scene = SceneManager.GetActiveScene().name;
+        Debug.Log(current_scene);
+        if (current_scene == "Investigation_Phase_1")
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
     //set new expected progress list
     public void SetMultipleExpectedProgressList(List<string> newExpectedProgress)
     {
@@ -76,11 +118,18 @@ public class ProgressManager : MonoBehaviour
         //is this an expected achievement the player should get?
         if (expectedSceneProgressList.Contains(achievement))
         {
-            sceneProgressList.Add(achievement);
+            if (!sceneProgressList.Contains(achievement)){
+                sceneProgressList.Add(achievement);
+            }
         }
         else
         {
             throw new NullReferenceException(achievement + " is NOT an achievement");
+        }
+
+        foreach (string s in sceneProgressList)
+        {
+            print(s);
         }
     }
 
@@ -123,12 +172,15 @@ public class ProgressManager : MonoBehaviour
         return sceneProgressList.Contains(achievement);
     }
 
-    public void FinishScene(List<string> newExpectedSceneList)
+    public void FinishScene(HashSet<string> newExpectedSceneList)
     {
         //transition to next scene once done
+
+        expectedSceneProgressList = newExpectedSceneList;
         StartCoroutine(FadeOutFadeIn());
+        
         //move to next scene?
-        SceneTransition(newExpectedSceneList);
+        //SceneTransition(newExpectedSceneList);
     }
     public bool SceneComplete()
     {

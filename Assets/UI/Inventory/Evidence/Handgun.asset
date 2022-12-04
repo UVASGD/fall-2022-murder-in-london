@@ -16,4 +16,4 @@ MonoBehaviour:
   description: A handgun from the scene of the crime. Appears to be the murder weapon.
   icon: {fileID: 21300000, guid: 775c56ed58c0cbb419def77f2ca93117, type: 3}
   isDefaultItem: 0
-  discovered: 1
+  discovered: 0

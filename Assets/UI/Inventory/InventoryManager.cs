@@ -62,6 +62,13 @@ public class InventoryManager : MonoBehaviour
             iconBackgrounds[i].color = iconColor;
             iconToEvidence[i] = null;
         }
+        foreach (Evidence e in inventory)
+        {
+            if (!e.isDefaultItem)
+            {
+                e.discovered = false;
+            }
+        }
         // update the menu to reflect the currently found items
         updateInventoryDisplay();
     }

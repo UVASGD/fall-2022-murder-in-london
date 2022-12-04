@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Yarn.Unity;
 
 namespace Cainos.PixelArtTopDown_Basic
@@ -17,7 +19,6 @@ namespace Cainos.PixelArtTopDown_Basic
         public float interactionRadius = 0.75f;
         public int direction_facing = 0;
         public double time = 0;
-
         private void Start()
         {
             animator = GetComponent<Animator>();
@@ -35,6 +36,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
+
             // Check for change in dialog speed and change depending on current speed. 
             if (Input.GetKeyUp(KeyCode.K))
             {
@@ -49,7 +51,10 @@ namespace Cainos.PixelArtTopDown_Basic
                 
             }
             // Remove all player control when we're in dialogue
-            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.presentEvidence)
+            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || 
+                InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.presentEvidence ||
+                InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.talkToCharacter ||
+                InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory)
             {
                 Vector2 dir_dialogue = Vector2.zero;
                 dir_dialogue.Normalize();
@@ -57,13 +62,19 @@ namespace Cainos.PixelArtTopDown_Basic
 
                 GetComponent<Rigidbody2D>().velocity = speed * dir_dialogue;
 
-                if(!FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
+                if (!FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
                 {
                     if (Input.GetKeyUp(KeyCode.Z))
                     {
                         Debug.Log("setting to playermovement");
                         InteractionManager.Instance.SetToPlayerMovement();
                     }
+                }
+                else
+                {
+                    dialogueInput.enabled = true;
+                    //Debug.Log("running dialogue");
+                    //Debug.Log(dialogueInput.enabled);
                 }
                 return;
             }
@@ -107,88 +118,40 @@ namespace Cainos.PixelArtTopDown_Basic
             GetComponent<Rigidbody2D>().velocity = speed * dir;
 
 
-            if (Input.GetKeyUp(KeyCode.X))
-            {
-                PerformInteraction();
-            }
+            //if (Input.GetKeyUp(KeyCode.X))
+            //{
+            //   PerformInteraction();
+            //}
             if (Input.GetKeyUp(KeyCode.F))
             {
-                CheckForNearbyNPC();
+                var target = CheckForNearbyNPC();
+                if (target != null)
+                {
+                    CharacterOptionFields characterOptions = target.GetComponent<CharacterOptionFields>();
+                    if (characterOptions != null)
+                    {
+                        PerformInteraction(characterOptions);
+                    }
+                    else{
+                        StartCoroutine(ObjectInteraction(target));
+                    }
+                }
             }
             if(Input.GetKeyUp(KeyCode.E) && InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.playerMove){
                 InteractionManager.Instance.SetToViewInventory();
             }
+            //if (Input.GetKeyUp(KeyCode.G))
+            //{
+            //    CanvasGroup[] groups = FindObjectsOfType<CanvasGroup>();
+            //    foreach (CanvasGroup i in groups)
+            //    {
+            //        Debug.Log(i);
+            //    }
+            //}
         }
-        public void PerformInteraction()
+        public void PerformInteraction(CharacterOptionFields targetFields)
         {
-
-            var allParticipants = new List<NPC>(FindObjectsOfType<NPC>());
-            //Debug.Log(allParticipants.Count);
-            var target = allParticipants.Find(delegate (NPC p)
-            {
-                Debug.Log(p.characterName);
-                Debug.Log(string.IsNullOrEmpty(p.talkToNode) == false);
-                Debug.Log((p.transform.position - this.transform.position)// is in range?
-                .magnitude);
-                Debug.Log((p.transform.position - this.transform.position).magnitude <= interactionRadius);
-                Debug.Log(interactionRadius);
-                return string.IsNullOrEmpty(p.talkToNode) == false && //has a conversation node?
-                (p.transform.position - this.transform.position)// is in range?
-                .magnitude <= interactionRadius;
-            });
-
-            if (target == null)
-            {
-                return;
-            }
-
-
-            Vector3 raycast_direction = new Vector3(0, 0, 0);
-
-            if (direction_facing == 0)
-            {
-                raycast_direction = new Vector3(0, -1, 0);
-            }
-            else if (direction_facing == 1)
-            {
-                raycast_direction = new Vector3(0, 1, 0);
-            }
-            else if (direction_facing == 2)
-            {
-                raycast_direction = new Vector3(1, 0, 0);
-            }
-            else if (direction_facing == 3)
-            {
-                raycast_direction = new Vector3(-1, 0, 0);
-            }
-            
-
-            // Debug.Log(target);
-            Vector3 direction_to_target = (target.transform.position - this.transform.position);
-            Debug.Log(direction_to_target);
-            Debug.Log(raycast_direction);
-            Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
-
-            if (Vector3.Angle(direction_to_target, raycast_direction) > 49)
-            {
-                return;
-            }
-            if (target != null)
-            {
-                CharacterOptionFields targetFields = target.GetComponent<CharacterOptionFields>();
-
-                //if target has no character option fields, then that means that the target is a piece of evidence
-                if (targetFields == null)
-                {
-
-                }
-                else
-                {
-                    Debug.Log("setting to character Interaction");
-                    Debug.Log(InteractionManager.Instance.GetInteractionState());
-                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.talkToNode ,targetFields.character_options);
-                }
-            }
+            InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.talkToNode, targetFields.character_options);
         }
         /// <summary>
         /// Find all DialogueParticipants
@@ -197,7 +160,7 @@ namespace Cainos.PixelArtTopDown_Basic
         /// Filter them to those that have a Yarn start node and are in
         /// range; then start a conversation with the first one
         /// </remarks>
-        public void CheckForNearbyNPC()
+        public NPC CheckForNearbyNPC()
         {
             try
             {
@@ -241,15 +204,18 @@ namespace Cainos.PixelArtTopDown_Basic
                 if (Vector3.Angle(direction_to_target, raycast_direction) > 49)
                 {
                     Debug.Log("angle too small...?");
-                    return;
+                    return null;
+                }
+
+                else
+                {
+                    return target;
                 }
                 
-
-
-                if (target != null)
-                {
-                    StartCoroutine(ObjectInteraction(target));
-                }
+                //if (target != null)
+                //{
+                //    StartCoroutine(ObjectInteraction(target));
+                //}
 
                 
             }
@@ -257,6 +223,7 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 Debug.Log(e);
                 Debug.Log("No NPCs found nearby");
+                return null;
             }
 
 
@@ -265,7 +232,7 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             Debug.Log("entering coroutine");
             target.interact();
-            dialogueInput.enabled = true;
+            //dialogueInput.enabled = true;
             FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
             yield return new WaitForSeconds(0);
         }
