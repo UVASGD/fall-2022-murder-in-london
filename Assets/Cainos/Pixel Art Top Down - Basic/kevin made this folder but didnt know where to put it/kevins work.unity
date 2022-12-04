@@ -562,7 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09822653aaf35ca41971a255b31dcde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   playerHealth: 8
+=======
+>>>>>>> fba7488cfdef4229d33a75721f7bebabceee42fd
   allhearts: {fileID: 0}
   hearts:
   - {fileID: 365157947}
