@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pocket Watch
   m_EditorClassIdentifier: 
   name: Pocket Watch
-  description: A golden pocket watch with a long chain. Found at the scene of the
-    crime.
+  description: A golden pocket watch with a long chain. It clearly costs a lot of
+    money. The person who owns it definitely cares a lot about their image. Found
+    at the scene of the crime.
   icon: {fileID: 21300000, guid: 4d7497fa8673083419e340dc474a06e3, type: 3}
   isDefaultItem: 0
   discovered: 0

@@ -68,7 +68,6 @@ public class SceneDirector : MonoBehaviour
     {
         //set initial achievements
         List<string> requiredAchievements = new();
-        requiredAchievements.Add("chest");
         if(ProgressManager.Instance){
             ProgressManager.Instance.SetMultipleExpectedProgressList(requiredAchievements);
         }
@@ -84,7 +83,6 @@ public class SceneDirector : MonoBehaviour
                 if(FindObjectOfType<DialogueRunner>().IsDialogueRunning == false){
                     //Debug.Log("changing scene");
                     HashSet<string> nextExpectedAchievements = new();
-                    //nextExpectedAchievements.Add("chest");
                     ProgressManager.Instance.FinishScene(nextExpectedAchievements);
                 }
             }
@@ -109,7 +107,7 @@ public class SceneDirector : MonoBehaviour
         InteractionManager.Instance.SetToPresentEvidence(nameOfCurrentFile, evidenceNeeded);
     }
     private void TransitionToNextScene(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ProgressManager.Instance.FinishScene(new HashSet<string>());
     }
     
 }

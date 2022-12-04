@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cigar
   m_EditorClassIdentifier: 
   name: Cigar
-  description: Kent's cigar. Found in an astray along the wall.
-  icon: {fileID: 21300000, guid: ebd8f3f783f49354680cd93306334523, type: 3}
+  description: A partially used cigar. Found in an astray along the wall at the scene
+    of the crime. It seems like it was used sometime within the last day..
+  icon: {fileID: 21300000, guid: 55f431494cd29e147a61f1876b2a8efa, type: 3}
   isDefaultItem: 0
   discovered: 0

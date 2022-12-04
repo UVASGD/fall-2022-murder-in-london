@@ -58,7 +58,6 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentState);
         //current state: playerMove
         if(currentState == InteractionState.playerMove)
         {

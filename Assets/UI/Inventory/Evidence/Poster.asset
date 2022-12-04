@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985b12eb7cbcea478b230fac3f98a2d, type: 3}
   m_Name: Poster
   m_EditorClassIdentifier: 
-  name: Poster
-  description: Movie poster.
+  name: Out With A Bang! Poster
+  description: The poster for the movie that was premeiring the night of the murder.
+    It seems to be a violent action movie, and the description on the poster promises
+    that in the climax of the movie, a giant gunfight occurs the likes of which has
+    never before been seen in cinema. \n Not really my kind of movie, but the effects
+    seem decent.
   icon: {fileID: 21300000, guid: ebd8f3f783f49354680cd93306334523, type: 3}
   isDefaultItem: 0
   discovered: 0

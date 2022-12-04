@@ -11,7 +11,9 @@ Christine: Yet, you’re always playing second fiddle. I heard you were passed u
 Agnes Painsworth: Yes, Lucky Leroy always got his break.
 Christine: Lucky? Or more talented? Did you enter the booth at any point during the picture?
 Agnes Painsworth: No, don’t be daft! Why would I?
-Christine: That's a lie, and I have evidence to prove it.
-Agnes Painsworth: Excuse me? What could you possibly have to pin me to this?
+Christine: That's a lie, and I think I have evidence to prove it.
+Agnes Painsworth: Excuse me? What could you possibly have to pin me to this? 
+Agnes Painsworth: You should know that I'm a fine gentleman whose image shan't be tarnished by these baseless acusations.
+Christine: Really. In that case, does this look familiar?
 << requireEvidence "Agnes" "Pocket Watch" >>
 ===
