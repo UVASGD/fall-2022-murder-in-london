@@ -1,0 +1,19 @@
+﻿title: AgnesInvestigation
+tags:
+---
+Agnes Painsworth: Hello there, detective.
+Christine: Well, if it isn’t the famous Agnes Painsworth.
+Christine: (Agnes is an actor as well, but definitely less accompished than the victim. He played a side character in the film that showed last night.)
+Agnes Painsworth: Agnes is a girl’s name. I just go by Painsworth now.
+Christine: Yes, I suppose that is an improvement. Am I correct in assuming that you and Leroy were close?
+Agnes Painsworth: Close enough. We were both accomplished actors.
+Christine: Yet, you’re always playing second fiddle. I heard you were passed up for the main role in "Out with a Bang!"
+Agnes Painsworth: Yes, Lucky Leroy always got his break.
+Christine: Lucky? Or more talented? Did you enter the booth at any point during the picture?
+Agnes Painsworth: No, don’t be daft! Why would I?
+Christine: That's a lie, and I think I have evidence to prove it.
+Agnes Painsworth: Excuse me? What could you possibly have to pin me to this? 
+Agnes Painsworth: You should know that I'm a fine gentleman whose image shan't be tarnished by these baseless acusations.
+Christine: Really. In that case, does this look familiar?
+<< requireEvidence "Agnes" "Pocket Watch" >>
+===

@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(this.gameObject);
         }else{
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
     // parent of the whole inventory, used to show/hide the inventory

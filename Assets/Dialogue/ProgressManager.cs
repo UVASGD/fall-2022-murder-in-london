@@ -52,10 +52,16 @@ public class ProgressManager : MonoBehaviour
             expectedAchievements = GameProgressManager.Scene2Requirements;
             
         }
-        else
+        else if (current_scene == 2)
         {
             currentAchievements = GameProgressManager.Scene2Requirements;
             expectedAchievements = GameProgressManager.Scene4Requirements;
+        }
+        else if (current_scene == 3){
+            currentAchievements = GameProgressManager.Scene4Requirements;
+        }
+        else{
+            currentAchievements = GameProgressManager.Scene2Requirements;
         }
         foreach (string s in expectedAchievements)
         {
@@ -89,9 +95,15 @@ public class ProgressManager : MonoBehaviour
         {
             return 1;
         }
-        else
+        else if (current_scene == "Investigation_Phase_2")
         {
             return 2;
+        }
+        else if (current_scene == "FinalInvestigation"){
+            return 3;
+        }
+        else{
+            return 4;
         }
     }
     //set new expected progress list
@@ -120,6 +132,9 @@ public class ProgressManager : MonoBehaviour
         {
             if (!sceneProgressList.Contains(achievement)){
                 sceneProgressList.Add(achievement);
+            }
+            if (!gameProgressList.Contains(achievement)){
+                gameProgressList.Add(achievement);
             }
         }
         else
@@ -175,7 +190,7 @@ public class ProgressManager : MonoBehaviour
     public void FinishScene(HashSet<string> newExpectedSceneList)
     {
         //transition to next scene once done
-
+        InventoryManager.Instance.updateInventoryDisplay();
         expectedSceneProgressList = newExpectedSceneList;
         StartCoroutine(FadeOutFadeIn());
         
@@ -197,10 +212,10 @@ public class ProgressManager : MonoBehaviour
     IEnumerator FadeOutFadeIn()
     {
         Debug.Log("entering: ProgressManager.FadeOutFadeIn()");
-        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 2));
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 0, 1, 0.5f));
 
-        yield return new WaitForSeconds(2);
-
-        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 2));
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 }

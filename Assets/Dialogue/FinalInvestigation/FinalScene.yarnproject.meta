@@ -1,0 +1,74 @@
+fileFormatVersion: 2
+guid: a8dbac797ad976c47a013dfd339f4783
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  sourceScripts:
+  - {fileID: 6391573757903218779, guid: c3a7bb3d8f5310040b1d79fa8bc8cbcc, type: 3}
+  - {fileID: 6391573757903218779, guid: ce2387601451f224eb6752d3d7bb44d1, type: 3}
+  - {fileID: 6391573757903218779, guid: cd081e1b3f0dc3f49848403c4e4090bc, type: 3}
+  - {fileID: 6391573757903218779, guid: d54d27c5f73a1184899764de8e3937a0, type: 3}
+  - {fileID: 6391573757903218779, guid: bfd9cb67d50c101409b6ac7558210560, type: 3}
+  - {fileID: 6391573757903218779, guid: dd07464b28755314cb55eef53e92dc7b, type: 3}
+  - {fileID: 6391573757903218779, guid: b1378d0194cccfb40a53e84f4f0ef87e, type: 3}
+  compileErrors: []
+  serializedDeclarations: []
+  defaultLanguage: en-US
+  languagesToSourceAssets: []
+  useAddressableAssets: 0
+  searchAllAssembliesForActions: 1
+  assembliesToSearch: []
+  ListOfFunctions:
+  - Name: Random
+    ReturnType: -> Single
+    Parameters: []
+  - Name: RandomRange
+    ReturnType: -> Single
+    Parameters:
+    - minInclusive
+    - maxInclusive
+  - Name: Dice
+    ReturnType: -> Int32
+    Parameters:
+    - sides
+  - Name: Round
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: RoundPlaces
+    ReturnType: -> Single
+    Parameters:
+    - num
+    - places
+  - Name: Floor
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Ceil
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Inc
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Dec
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: Decimal
+    ReturnType: -> Single
+    Parameters:
+    - num
+  - Name: Int
+    ReturnType: -> Int32
+    Parameters:
+    - num
+  - Name: CoolFunction
+    ReturnType: -> Int32
+    Parameters: []
