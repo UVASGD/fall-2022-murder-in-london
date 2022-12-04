@@ -1,0 +1,11 @@
+﻿title: KentIncorrect
+tags:
+---
+Christine: This piece of evidence proves you were in the booth last night.
+Kent El De-Truth: Uh, what? I've never seen this object before in my life.
+Christine: Ah, right.
+Kent El De-Truth: You really scared me for a minute there, my heart was palpatating.
+Kent El De-Truth: Stuff like this is why I smoke. Calms the nerves.
+Christine: You know, that reminds me. I also found this at the scene of the crime:
+<< requireEvidence "Kent" "Cigar" >>
+===

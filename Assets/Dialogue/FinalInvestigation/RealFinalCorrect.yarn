@@ -1,0 +1,10 @@
+﻿title: RealFinalCorrect
+tags:
+---
+Christine: Kent was ...preoccupied throughout the night. He couldn't have comitted the murder. 
+Christine: The proof of that is this note from the staff. 
+Christine: Which only leaves you, as the final person who would have the knowledge and ability to commit the murder.
+Agnes: This is preposterous! In order to do this, I would need prefect timing- how would I even know when to shoot?
+Christine: Oh, but you knew precisely the time. Here's how you knew when to shoot:
+<< requireEvidence "Ending" "Pocket Watch" >>
+===

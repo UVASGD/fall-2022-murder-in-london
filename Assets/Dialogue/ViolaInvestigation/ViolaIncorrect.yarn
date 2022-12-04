@@ -1,0 +1,9 @@
+﻿title: ViolaIncorrect
+tags:
+---
+Christine: This piece of evidence proves you were in the booth last night.
+Viola Villin: Uhh, does it? I don't see how you get that idea.
+Christine: (Crap. I was hoping I'd get lucky.)
+Christine: Right, I was just testing you. Glad to know you're paying attention. The evidence that really proves you were in the booth last night is this:
+<< requireEvidence "Viola" "Handkerchief" >>
+===

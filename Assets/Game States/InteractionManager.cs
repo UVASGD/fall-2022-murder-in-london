@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using Cainos.PixelArtTopDown_Basic;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -31,14 +33,21 @@ public class InteractionManager : MonoBehaviour
         playerMove,
         talkToCharacter,
         examineEvidence,
+        viewInventory,
+        presentEvidence,
     }
 
     private InteractionState currentState;
     private InteractionState nextState;
+    private string characterName;
     private Sprite characterImage;
     private List<string> characterOptionChoices;
 
     private bool hasUpdated = true;
+
+    // saved information for the presenting evidence state
+    private string lastYarnFileToNeedEvidence;
+    private string lastEvidenceNeeded;
 
     // Start is called before the first frame update
     void Start()
@@ -49,19 +58,32 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentState);
         //current state: playerMove
         if(currentState == InteractionState.playerMove)
         {
             //playerMove --> talkToCharacter
             if (nextState == InteractionState.talkToCharacter && !hasUpdated)
             {
+                Debug.Log("changing state");
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.SetValues(characterImage, characterOptionChoices);
+                characterPanelController.SetValues(characterImage, characterPanelController.characterName, characterOptionChoices); // note from Jimmy: I had to change this line to get it to compile, took my best guess. If it's breaking check the name field in this
                 hasUpdated = true;
                 currentState = InteractionState.talkToCharacter;
                 characterPanelController.Interact();
 
                 
+            }
+            //playerMove --> view Inventory
+            if(nextState == InteractionState.viewInventory && !hasUpdated){
+                InventoryManager.Instance.updateInventoryDisplay();
+                currentState = InteractionState.viewInventory;
+                hasUpdated = true;
+            }
+            // playerMove --> presentEvidence
+            if(nextState == InteractionState.presentEvidence && !hasUpdated){
+                currentState = InteractionState.presentEvidence;
+                hasUpdated = true;
             }
 
             
@@ -74,10 +96,15 @@ public class InteractionManager : MonoBehaviour
             if (nextState == InteractionState.playerMove && !hasUpdated)
             {
                 CharacterOptionViews characterPanelController = GetCharacterViewController();
-                characterPanelController.LeaveInteraction();
-                hasUpdated = true;
+                characterPanelController.LeaveInteraction(); //end interaction returns false when in dialogue mode
 
                 currentState = InteractionState.playerMove;
+                hasUpdated = true;
+            }
+            // talkToCharacter --> presentEvidence
+            if(nextState == InteractionState.presentEvidence && !hasUpdated){
+                currentState = InteractionState.presentEvidence;
+                hasUpdated = true;
             }
 
         }
@@ -86,6 +113,33 @@ public class InteractionManager : MonoBehaviour
         else if(currentState == InteractionState.examineEvidence)
         {
 
+        }
+        // current state: view inventory
+        else if(currentState == InteractionState.viewInventory){
+            if(nextState != InteractionState.viewInventory && !hasUpdated){
+                currentState = nextState;
+                hasUpdated = true;
+            }
+        }
+         else if(currentState == InteractionState.presentEvidence){
+            if(nextState != InteractionState.presentEvidence && !hasUpdated){
+                // leaving the present evidence file, need to call the right yarn file to handle this
+                // if the evidence they selected is the same as the one the original file expected, then call the yarn with the name of the last one plus "Correct"
+                // otherwise call the yarn file with the name of the last one plus "Incorrect"
+                // For example: If the BobTalks yarn file runs and then asks to be presented a knife evidence, then if the player gets it right the BobTalksCorrect file will be called
+                // If the player gets it wrong the BobTalksIncorrect yarn file will be called instead
+                TopDownCharacterController player = FindObjectOfType<TopDownCharacterController>();
+                if(player){
+                    player.dialogueInput.enabled = true;
+                }
+                if(lastEvidenceNeeded == InventoryManager.Instance.getSelected()){
+                    FindObjectOfType<DialogueRunner>().StartDialogue(lastYarnFileToNeedEvidence + "Correct");
+                }else{
+                    FindObjectOfType<DialogueRunner>().StartDialogue(lastYarnFileToNeedEvidence + "Incorrect");
+                }
+                currentState = nextState;
+                hasUpdated = true;
+            }
         }
         else
         {
@@ -114,16 +168,31 @@ public class InteractionManager : MonoBehaviour
         nextState = InteractionState.playerMove;
         hasUpdated = false;
     }
-    public void SetToCharacterInteraction(Sprite newCharacterImage, List<string> newCharacterOptions)
+    public void SetToCharacterInteraction(Sprite newCharacterImage, string newCharactername, List<string> newCharacterOptions)
     {
         nextState = InteractionState.talkToCharacter;
         characterImage = newCharacterImage;
+        characterName = newCharactername;
         characterOptionChoices = newCharacterOptions;
         hasUpdated = false;
+        print("setted character interaction");
     }
     public void SetToExamineEvidence()
     {
         nextState = InteractionState.examineEvidence;
+        hasUpdated = false;
+    }
+    public void SetToViewInventory(){
+        nextState = InteractionState.viewInventory;
+        hasUpdated = false;
+    }
+
+        // function to require the player to present evidence
+    // needs the name of the yarn file that's calling this (so it knows what to call later) and the name of the evidence the player must present to succeed
+    public void SetToPresentEvidence(string lastYarnFileName, string desiredEvidenceName){
+        lastYarnFileToNeedEvidence = lastYarnFileName;
+        lastEvidenceNeeded = desiredEvidenceName;
+        nextState = InteractionState.presentEvidence;
         hasUpdated = false;
     }
 }

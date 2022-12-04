@@ -11,7 +11,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         // because we are using the same button press for both starting and skipping dialogue they collide
         // so we are going to make it so that the input gets turned off
-        private DialogueAdvanceInput dialogueInput;
+        public DialogueAdvanceInput dialogueInput;      //note from Jimmy: I made this public so that I could enable it remotely, very hacky but crunch night is tomorrow lol
         private Animator animator;
         private DialogueRunner dialogueRunner;
         public float interactionRadius = 0.75f;
@@ -49,7 +49,7 @@ namespace Cainos.PixelArtTopDown_Basic
                 
             }
             // Remove all player control when we're in dialogue
-            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
+            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.presentEvidence)
             {
                 Vector2 dir_dialogue = Vector2.zero;
                 dir_dialogue.Normalize();
@@ -57,10 +57,13 @@ namespace Cainos.PixelArtTopDown_Basic
 
                 GetComponent<Rigidbody2D>().velocity = speed * dir_dialogue;
 
-                if (Input.GetKeyUp(KeyCode.Z))
+                if(!FindObjectOfType<DialogueRunner>().IsDialogueRunning == true)
                 {
-                    Debug.Log("setting to playermovement");
-                    InteractionManager.Instance.SetToPlayerMovement();
+                    if (Input.GetKeyUp(KeyCode.Z))
+                    {
+                        Debug.Log("setting to playermovement");
+                        InteractionManager.Instance.SetToPlayerMovement();
+                    }
                 }
                 return;
             }
@@ -111,6 +114,9 @@ namespace Cainos.PixelArtTopDown_Basic
             if (Input.GetKeyUp(KeyCode.F))
             {
                 CheckForNearbyNPC();
+            }
+            if(Input.GetKeyUp(KeyCode.E) && InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.playerMove){
+                InteractionManager.Instance.SetToViewInventory();
             }
         }
         public void PerformInteraction()
@@ -179,8 +185,8 @@ namespace Cainos.PixelArtTopDown_Basic
                 else
                 {
                     Debug.Log("setting to character Interaction");
-                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.character_options);
-                    //FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+                    Debug.Log(InteractionManager.Instance.GetInteractionState());
+                    InteractionManager.Instance.SetToCharacterInteraction(targetFields.character_image, targetFields.talkToNode ,targetFields.character_options);
                 }
             }
         }
@@ -227,12 +233,14 @@ namespace Cainos.PixelArtTopDown_Basic
 
                 // Debug.Log(target);
                 Vector3 direction_to_target = (target.transform.position - this.transform.position);
-                //Debug.Log(direction_to_target);
-                //Debug.Log(raycast_direction);
-                //Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
+                Debug.Log(direction_to_target);
+                Debug.Log(raycast_direction);
+                Debug.Log(Vector3.Angle(direction_to_target, raycast_direction));
 
+                Debug.Log(target == null);
                 if (Vector3.Angle(direction_to_target, raycast_direction) > 49)
                 {
+                    Debug.Log("angle too small...?");
                     return;
                 }
                 

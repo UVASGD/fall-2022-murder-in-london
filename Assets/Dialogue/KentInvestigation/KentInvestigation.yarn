@@ -1,0 +1,22 @@
+﻿title: KentInvestigation
+tags:
+---
+Christine: Hello, Mr. De Truth. 
+Kent El De-Truth: Hello, detective. You don't mind if I smoke during this, do you?
+Christine: Are you allowed to smoke in this theater? Most that I know have started implementing non-smoking rules.
+Kent El De-Truth: Aye, this one has one of those rules too, but I know the owner. He's a good friend, so he lets me smoke when I get the need.
+Christine: Ah, so you're the only one allowed to smoke in here then?
+Kent El De-Truth: The one and only.
+Christine: Then feel free to smoke. 
+Christine: Now, as Leroy Lewis’ manager, you had many opportunities to enter his booth.
+Kent El De-Truth: I will not deny that, but I can assure you that I am not the murderer. Leroy and I are mates: his success is my success.
+Kent El De-Truth: Or, it was, I guess. I still can't beleive he's gone.
+Christine: Did you enter the booth at any time during the picture premier?
+Kent El De-Truth: I did not.
+Kent El De-Truth: I never entered the booth before I found poor Leroy's body in the morning.
+Kent El De-Truth: Even then, I never really entered the booth, I just saw his body from the other side of the door and ran to call the police.
+Christine: (Hm...)
+Christine: (...His name is Kent El De Truth. Do I believe him?)
+Christine: Would you mind explaining this, then?
+<< requireEvidence "Kent" "Cigar" >>
+===

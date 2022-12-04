@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class SceneDirector : MonoBehaviour
 {
@@ -39,6 +40,14 @@ public class SceneDirector : MonoBehaviour
                 "checkAchievement",
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
                 );
+            dialogueRunnerObject.AddCommandHandler<string, string>(
+                "requireEvidence",
+                PresentEvidence
+            );
+            dialogueRunnerObject.AddCommandHandler(
+                "transitionScene",
+                TransitionToNextScene
+            );
         }
         else
         {
@@ -56,25 +65,28 @@ public class SceneDirector : MonoBehaviour
         //set initial achievements
         List<string> requiredAchievements = new();
         requiredAchievements.Add("chest");
-
-        ProgressManager.Instance.SetMultipleExpectedProgressList(requiredAchievements);
+        if(ProgressManager.Instance){
+            ProgressManager.Instance.SetMultipleExpectedProgressList(requiredAchievements);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //if all achievements found, move onto next scen
-        if (ProgressManager.Instance.SceneComplete())
-        {
-            //when dialogue is done, do the scene change
-            if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == false)
+        if(ProgressManager.Instance){
+            if (ProgressManager.Instance.SceneComplete())
             {
-                //Debug.Log("changing scene");
-                List<string> nextExpectedAchievements = new();
-                nextExpectedAchievements.Add("chest");
-                ProgressManager.Instance.FinishScene(nextExpectedAchievements);
+                //when dialogue is done, do the scene change
+                if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == false)
+                {
+                    //Debug.Log("changing scene");
+                    List<string> nextExpectedAchievements = new();
+                    nextExpectedAchievements.Add("chest");
+                    ProgressManager.Instance.FinishScene(nextExpectedAchievements);
+                }
+                
             }
-            
         }
     }
 
@@ -86,6 +98,12 @@ public class SceneDirector : MonoBehaviour
     private bool CheckIfPlayerCompleted(string nodeName)
     {
         return ProgressManager.Instance.CheckIfPlayerCompleted(nodeName);
+    }
+    private void PresentEvidence(string nameOfCurrentFile, string evidenceNeeded){
+        InteractionManager.Instance.SetToPresentEvidence(nameOfCurrentFile, evidenceNeeded);
+    }
+    private void TransitionToNextScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
 }
