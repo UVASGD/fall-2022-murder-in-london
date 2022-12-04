@@ -403,10 +403,17 @@ namespace Yarn.Unity
         /// </summary>
         CustomEffects.CoroutineInterruptToken currentStopToken = new CustomEffects.CoroutineInterruptToken();
 
+        public AudioSource audioClip = new AudioSource();
+
+        private void Start()
+        {
+            audioClip = GetComponent<AudioSource>();
+        }
         private void Awake()
         {
             canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
+            //print(audioClip);
         }
 
         private void Reset()
@@ -499,11 +506,14 @@ namespace Yarn.Unity
             StopAllCoroutines();
 
             // Begin running the line as a coroutine.
+            
             StartCoroutine(RunLineInternal(dialogueLine, onDialogueLineFinished));
+            
         }
 
         private IEnumerator RunLineInternal(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
+            
             IEnumerator PresentLine()
             {
                 lineText.gameObject.SetActive(true);
@@ -594,6 +604,7 @@ namespace Yarn.Unity
             // Run any presentations as a single coroutine. If this is stopped,
             // which UserRequestedViewAdvancement can do, then we will stop all
             // of the animations at once.
+            
             yield return StartCoroutine(PresentLine());
 
             currentStopToken.Complete();
@@ -627,9 +638,11 @@ namespace Yarn.Unity
                 // coroutine.
                 yield break;
             }
-
+            print("before stop");
+            
             // Our presentation is complete; call the completion handler.
             onDialogueLineFinished();
+            
         }
 
         /// <inheritdoc/>

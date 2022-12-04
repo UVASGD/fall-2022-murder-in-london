@@ -12329,6 +12329,16 @@ PrefabInstance:
       propertyPath: startAutomatically
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5142284039721093363, guid: d420d0b85612df84794d4f37bcf60a7c,
+        type: 3}
+      propertyPath: dialogueViews.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142284039721093363, guid: d420d0b85612df84794d4f37bcf60a7c,
+        type: 3}
+      propertyPath: dialogueViews.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6560197686369807652, guid: d420d0b85612df84794d4f37bcf60a7c,
         type: 3}
       propertyPath: m_AnchorMax.y

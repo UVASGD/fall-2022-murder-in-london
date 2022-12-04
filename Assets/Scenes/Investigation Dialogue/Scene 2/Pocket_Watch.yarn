@@ -3,13 +3,13 @@ tags:
 ---
 <<if GetSceneNumber() == 1>>
     <<if checkAchievement("Pocket Watch") is false>>
-        Christine: A shiny watch which looks like it costs 3 months of my salary. This could be useful. 
+        Christine: A shiny watch which looks like it costs 3 months of my salary. This could be useful.
         <<achievement "Pocket Watch">>
         Pocket watch carefully placed into coat pocket.
     <<else>>
-        Christine: Wonder how much this watch costed. 
+        Christine: Wonder how much this watch costed.
     <<endif>>
 <<else>>
-    Christine: That watch belonged to Agnes. 
+    Christine: That watch belonged to Agnes.
 <<endif>>
 ===
