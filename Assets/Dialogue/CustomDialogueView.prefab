@@ -151,15 +151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnProject: {fileID: 7545569452688597077, guid: 2c451a4b82d85d44aa856bf1f3d0ae87,
+  yarnProject: {fileID: 7545569452688597077, guid: a12faf65d491f1c4baab960b89ed8998,
     type: 3}
   _variableStorage: {fileID: -3623205898925369025}
   dialogueViews:
   - {fileID: 6890660482935702534}
   - {fileID: 7599023237411319222}
-  startNode: Start
+  startNode: IntroConversation
   startAutomatically: 1
-  runSelectedOptionAsLine: 0
+  runSelectedOptionAsLine: 1
   lineProvider: {fileID: 0}
   verboseLogging: 1
   onNodeStart:
@@ -301,12 +301,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Yarn.Unity.LineView, YarnSpinner.Unity
-          m_MethodName: OnContinueClicked
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueView: {fileID: 0}
   continueActionType: 1
-  continueActionKeyCode: 120
+  continueActionKeyCode: 99
 --- !u!114 &6890660482935702534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9.449829, y: 56}
+  m_AnchoredPosition: {x: 9.449951, y: 56}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5941876981831462375
@@ -848,7 +848,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8600017447802492555
 MonoBehaviour:

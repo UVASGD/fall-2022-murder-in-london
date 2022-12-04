@@ -46,8 +46,10 @@ public class ProgressManager : MonoBehaviour
         List<string> expectedAchievements = new();
         List<string> currentAchievements = new();
         int current_scene = getInvestigationScene();
+        print(current_scene);
         if(current_scene == 1)
         {
+      
             Debug.Log("entering current scene");
             expectedAchievements = GameProgressManager.Scene2Requirements;
             
@@ -62,21 +64,24 @@ public class ProgressManager : MonoBehaviour
         }
         else{
             currentAchievements = GameProgressManager.Scene2Requirements;
+            print("running fourth case");
         }
+        print("expected");
         foreach (string s in expectedAchievements)
         {
             expectedSceneProgressList.Add(s);
+            print(s);
         }
+        print("current");
         foreach(string s in currentAchievements)
         {
             sceneProgressList.Add(s);
-        }
-        foreach (string s in expectedSceneProgressList)
-        {
-            Debug.Log(s);
+            print(s);
         }
         //expectedSceneProgressList.Add("Key");
         //expectedSceneProgressList.Add("Handgun");
+        StartCoroutine(FadeIn());
+        InventoryManager.Instance.updateInventoryDisplay();
     }
 
     //transition to new scene, need a new set of requirements to meet
@@ -84,7 +89,8 @@ public class ProgressManager : MonoBehaviour
     {
         SetMultipleExpectedProgressList(newExpectedSceneProgressList);
         //empty out current progress
-        sceneProgressList.Clear(); 
+        sceneProgressList.Clear();
+        expectedSceneProgressList.Clear();
     }
 
     public int getInvestigationScene()
@@ -217,5 +223,11 @@ public class ProgressManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
+    }
+    IEnumerator FadeIn()
+    {
+        yield return StartCoroutine(Effects.FadeAlpha(curtainCanvasGroup, 1, 0, 0.5f));
+
+        yield return new WaitForSeconds(0.5f);
     }
 }

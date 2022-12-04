@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985b12eb7cbcea478b230fac3f98a2d, type: 3}
   m_Name: Notes
   m_EditorClassIdentifier: 
-  name: Letter to Kent
+  name: Notes
   description: A letter to Kent from the Theater's staff. It seems to be politely
     asking if he could refrain from using the Theater's bathroom in the future. Seems
     like he really did a number on the place- this letter seems to corroborate Kent's

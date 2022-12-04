@@ -403,11 +403,11 @@ namespace Yarn.Unity
         /// </summary>
         CustomEffects.CoroutineInterruptToken currentStopToken = new CustomEffects.CoroutineInterruptToken();
 
-        public AudioSource audioClip = new AudioSource();
+        //public AudioSource audioClip = new AudioSource();
 
         private void Start()
         {
-            audioClip = GetComponent<AudioSource>();
+            //audioClip = GetComponent<AudioSource>();
         }
         private void Awake()
         {
