@@ -1,0 +1,11 @@
+﻿title: Handkerchief
+tags:
+---
+<<if checkAchievement("Handkerchief") is false>>
+Christine: A handkerchief with Viola's name on it. Wonder why she left it here?
+<<achievement Handkerchief>>
+Picked up the handkerchief with caution.
+<<else>>
+Christine: Viola left her handkerchief here.
+<<endif>>
+===

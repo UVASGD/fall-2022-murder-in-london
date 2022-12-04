@@ -1,0 +1,11 @@
+﻿title: Pocket_Watch
+tags:
+---
+<<if checkAchievement("Pocket Watch") is false>>
+Christine: A shiny watch. This could be useful. 
+<<achievement "Pocket Watch">>
+Pocket watch carefully placed into coat pocket.
+<<else>>
+Christine: Wonder how much this watch costed. 
+<<endif>>
+===

@@ -1,0 +1,11 @@
+﻿title: Cigar
+tags:
+---
+<<if checkAchievement("Cigar") is false>>
+Christine: This cigar is Kent's. What is this doing here?
+<<achievement Cigar>>
+Cigar added to inventory.
+<<else>>
+Christine: Kent has bad taste in Cigars.
+<<endif>>
+===

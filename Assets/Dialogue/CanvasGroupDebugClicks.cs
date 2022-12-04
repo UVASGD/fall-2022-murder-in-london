@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Yarn.Unity;
+
 public class CanvasGroupDebugClicks : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -30,7 +33,16 @@ public class CanvasGroupDebugClicks : MonoBehaviour
             foreach (RaycastResult result in results)
             {
                 Debug.Log("Hit " + result.gameObject.name);
+                string name = result.gameObject.name;
+                if(name == "NameText" || name == "NamePanel" || name == "DialogText" || name == "ContinuePrompt")
+                {
+                    CustomLineView lv = GetComponentInChildren<CustomLineView>();
+                    lv.UserRequestedViewAdvancement();
+                }
+                break;
             }
+
+            
         }
     }
     private void Awake()
