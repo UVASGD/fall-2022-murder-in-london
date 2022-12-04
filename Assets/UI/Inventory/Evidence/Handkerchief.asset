@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985b12eb7cbcea478b230fac3f98a2d, type: 3}
   m_Name: Handkerchief
   m_EditorClassIdentifier: 
-  name: Handkercheif
-  description: A strange handkercheif, found at the scene of the crime. Bears the
+  name: Handkerchief
+  description: A strange handkerchief, found at the scene of the crime. Bears the
     initials "V.V.."
   icon: {fileID: 21300000, guid: d6d6f7b965c63d44988a2c0dd8485667, type: 3}
   isDefaultItem: 0
+  discovered: 1

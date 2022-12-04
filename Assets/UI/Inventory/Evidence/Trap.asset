@@ -16,3 +16,4 @@ MonoBehaviour:
   description: A bear trap that I found.
   icon: {fileID: 21300000, guid: a4bd34f7800e3c246aed0eea01bf99fb, type: 3}
   isDefaultItem: 0
+  discovered: 1

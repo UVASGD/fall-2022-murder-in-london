@@ -16,3 +16,4 @@ MonoBehaviour:
   description: A set of lockpicking tools.
   icon: {fileID: 21300000, guid: 2da7deb05f1b586448f4ca9879a1dde8, type: 3}
   isDefaultItem: 0
+  discovered: 1

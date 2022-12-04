@@ -58,6 +58,7 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentState);
         //current state: playerMove
         if(currentState == InteractionState.playerMove)
         {
@@ -127,11 +128,13 @@ public class InteractionManager : MonoBehaviour
                 // otherwise call the yarn file with the name of the last one plus "Incorrect"
                 // For example: If the BobTalks yarn file runs and then asks to be presented a knife evidence, then if the player gets it right the BobTalksCorrect file will be called
                 // If the player gets it wrong the BobTalksIncorrect yarn file will be called instead
+                TopDownCharacterController player = FindObjectOfType<TopDownCharacterController>();
+                if(player){
+                    player.dialogueInput.enabled = true;
+                }
                 if(lastEvidenceNeeded == InventoryManager.Instance.getSelected()){
-                    FindObjectOfType<TopDownCharacterController>().dialogueInput.enabled = true;
                     FindObjectOfType<DialogueRunner>().StartDialogue(lastYarnFileToNeedEvidence + "Correct");
                 }else{
-                    FindObjectOfType<TopDownCharacterController>().dialogueInput.enabled = true;
                     FindObjectOfType<DialogueRunner>().StartDialogue(lastYarnFileToNeedEvidence + "Incorrect");
                 }
                 currentState = nextState;
