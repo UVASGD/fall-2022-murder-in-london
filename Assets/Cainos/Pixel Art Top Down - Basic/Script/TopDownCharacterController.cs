@@ -53,7 +53,8 @@ namespace Cainos.PixelArtTopDown_Basic
             // Remove all player control when we're in dialogue
             if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == true || 
                 InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.presentEvidence ||
-                InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.talkToCharacter)
+                InteractionManager.Instance.GetInteractionState()==InteractionManager.InteractionState.talkToCharacter ||
+                InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory)
             {
                 Vector2 dir_dialogue = Vector2.zero;
                 dir_dialogue.Normalize();

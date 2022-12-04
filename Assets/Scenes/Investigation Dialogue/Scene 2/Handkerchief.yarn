@@ -1,11 +1,15 @@
 ﻿title: Handkerchief
 tags:
 ---
-<<if checkAchievement("Handkerchief") is false>>
-Christine: A handkerchief with Viola's name on it. Wonder why she left it here?
-<<achievement Handkerchief>>
-Picked up the handkerchief with caution.
+<<if GetSceneNumber() == 1>>
+    <<if checkAchievement("Handkerchief") is false>>
+    Christine: A handkerchief with  "V.V." inscribed onto it. 
+    <<achievement Handkerchief>>
+    Picked up the handkerchief with caution.
+    <<else>>
+    Christine: Someone left her handkerchief here.
+    <<endif>>
 <<else>>
-Christine: Viola left her handkerchief here.
+Christine: This handkerchief belonged to Viola. 
 <<endif>>
 ===

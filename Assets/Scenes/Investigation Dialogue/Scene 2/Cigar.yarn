@@ -1,11 +1,15 @@
 ﻿title: Cigar
 tags:
 ---
-<<if checkAchievement("Cigar") is false>>
-Christine: This cigar is Kent's. What is this doing here?
-<<achievement Cigar>>
-Cigar added to inventory.
+<<if GetSceneNumber() == 1>>
+    <<if checkAchievement("Cigar") is false>>
+    Christine: This cigar seems like it was smothered within the last day. What is this doing here?
+    <<achievement Cigar>>
+    Cigar added to inventory.
+    <<else>>
+    Christine: I don't personally smoke, but my career would go up in flames if I couldn't run anymore.
+    <<endif>>
 <<else>>
-Christine: Kent has bad taste in Cigars.
+    Christine: Turns out this cigar belonged to Kent. Shocking!
 <<endif>>
 ===

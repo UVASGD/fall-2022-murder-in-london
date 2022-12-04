@@ -5,12 +5,25 @@ using UnityEngine;
 public class GameProgressManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static List<string> Scene2Requirements = new();
+    public static List<string> Scene2Requirements = new List<string>
+    {
+        "Cigar",
+        "Handkerchief",
+        "Pocket Watch",
+    };
+    public static List<string> Scene4Requirements = new List<string>
+    {
+        "Cigar",
+        "Handkerchief",
+        "Pocket Watch",
+        "Notes",
+        "Poster",
+        "Handgun"
+    };
+
     void Start()
     {
-        Scene2Requirements.Add("Cigar");
-        Scene2Requirements.Add("Handkerchief");
-        Scene2Requirements.Add("Pocket Watch");
+       
     }
 
     // Update is called once per frame

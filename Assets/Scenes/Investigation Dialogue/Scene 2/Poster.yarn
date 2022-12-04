@@ -1,0 +1,16 @@
+﻿title: Poster
+tags:
+---
+<<if GetSceneNumber() == 1 || checkAchievement("Notes") is false>>
+    Christine: A poster for an action movie. It seems to be a film with lots of gunpowder effects.
+<<else>>
+    <<if checkAchievement("Poster") is false>>
+        Christine: This is poster is full of guns...!
+        <<achievement Poster>>
+        Poster noted down in your notebook.
+        Christine: Now the entire case is connected!
+    <<else>>
+        Christine: The movie was full of action towards the end, so is it possible...?
+    <<endif>>
+<<endif>>
+===

@@ -1,0 +1,17 @@
+﻿title: Notes
+tags:
+---
+<<if GetSceneNumber() == 2>>
+   <<if checkAchievement("Notes") is false>>
+        Christine: Guess these are the log from the staff complaining about restroom use. 
+        <<achievement Notes>>
+        Gingerly opened and read the notes.
+        Christine: That's odd. It seems like they wrote this before the murder happened?
+   <<else>>
+    
+   <<endif>>
+<<else>>
+    Christine: A letter placed in the seat next to the piano. I'm not sure it's important to the current investigation.
+<<endif>>
+
+===

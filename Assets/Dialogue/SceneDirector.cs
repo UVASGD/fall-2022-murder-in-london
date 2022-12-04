@@ -39,11 +39,14 @@ public class SceneDirector : MonoBehaviour
                 "checkAchievement",
                 (string nodeName) => { return CheckIfPlayerCompleted(nodeName); } //lambda function
                 );
+            dialogueRunnerObject.AddFunction(
+                "GetSceneNumber",
+                () => { return GetSceneNumber(); } //lambda function
+                );
             dialogueRunnerObject.AddCommandHandler<string, string>(
                 "requireEvidence",
                 PresentEvidence
             );
-
         }
         else
         {
@@ -60,8 +63,6 @@ public class SceneDirector : MonoBehaviour
     {
         //set initial achievements
         List<string> requiredAchievements = new();
-        requiredAchievements.Add("chest");
-
         ProgressManager.Instance.SetMultipleExpectedProgressList(requiredAchievements);
     }
 
@@ -75,8 +76,8 @@ public class SceneDirector : MonoBehaviour
             if (FindObjectOfType<DialogueRunner>().IsDialogueRunning == false)
             {
                 //Debug.Log("changing scene");
-                List<string> nextExpectedAchievements = new();
-                nextExpectedAchievements.Add("chest");
+                HashSet<string> nextExpectedAchievements = new();
+                //nextExpectedAchievements.Add("chest");
                 ProgressManager.Instance.FinishScene(nextExpectedAchievements);
             }
             
@@ -87,6 +88,10 @@ public class SceneDirector : MonoBehaviour
     private void ProgressScene(string achievement)
     {
         ProgressManager.Instance.ProgressScene(achievement);
+    }
+    private int GetSceneNumber()
+    {
+        return ProgressManager.Instance.getInvestigationScene();
     }
     private bool CheckIfPlayerCompleted(string nodeName)
     {
