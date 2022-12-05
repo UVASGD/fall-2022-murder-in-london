@@ -16,8 +16,8 @@ MonoBehaviour:
   description: The poster for the movie that was premeiring the night of the murder.
     It seems to be a violent action movie, and the description on the poster promises
     that in the climax of the movie, a giant gunfight occurs the likes of which has
-    never before been seen in cinema. \n Not really my kind of movie, but the effects
+    never before been seen in cinema. Not really my kind of movie, but the effects
     seem decent.
   icon: {fileID: 21300000, guid: 935b81c144872b14f84ecbeab0622114, type: 3}
   isDefaultItem: 0
-  discovered: 0
+  discovered: 1

@@ -49,9 +49,11 @@ public class InventoryManager : MonoBehaviour
     // list to convert from a given inventory icon (using the index of the icon) to the evidence object contained within
     private Evidence[] iconToEvidence = {null, null, null, null, null, null, null, null};
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
         // set up evidence icon lists
         evidenceIcons = iconParent.GetComponentsInChildren<Image>();
         iconBackgrounds = iconBackgroundParent.GetComponentsInChildren<Image>();
@@ -79,7 +81,7 @@ public class InventoryManager : MonoBehaviour
     {
         // check if in the viewing inventory state
         if(InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.viewInventory || InteractionManager.Instance.GetInteractionState() == InteractionManager.InteractionState.presentEvidence){
-            // if so, show the inventory and allow inputs
+            // if so, show the inventory and allow input
             inventoryMenu.SetActive(true);
             if(Input.GetKeyDown(KeyCode.A)){
             updateSelected(selectedIcon - 1);

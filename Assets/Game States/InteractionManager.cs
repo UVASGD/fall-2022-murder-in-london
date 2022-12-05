@@ -42,6 +42,8 @@ public class InteractionManager : MonoBehaviour
     private string characterName;
     private Sprite characterImage;
     private List<string> characterOptionChoices;
+    private AudioSource inventoryOpen = new();
+    private AudioSource inventoryClose = new();
 
     private bool hasUpdated = true;
 
@@ -53,6 +55,8 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         currentState = InteractionState.playerMove;
+        inventoryOpen = GameObject.Find("InventoryOpenSFX").GetComponent<AudioSource>();
+        inventoryClose = GameObject.Find("InventoryCloseSFX").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -75,6 +79,7 @@ public class InteractionManager : MonoBehaviour
             }
             //playerMove --> view Inventory
             if(nextState == InteractionState.viewInventory && !hasUpdated){
+                inventoryOpen.Play();
                 InventoryManager.Instance.updateInventoryDisplay();
                 currentState = InteractionState.viewInventory;
                 hasUpdated = true;
@@ -117,6 +122,7 @@ public class InteractionManager : MonoBehaviour
         // current state: view inventory
         else if(currentState == InteractionState.viewInventory){
             if(nextState != InteractionState.viewInventory && !hasUpdated){
+                inventoryClose.Play();
                 currentState = nextState;
                 hasUpdated = true;
             }

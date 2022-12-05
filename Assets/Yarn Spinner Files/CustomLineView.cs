@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace Yarn.Unity
 {
@@ -403,11 +404,17 @@ namespace Yarn.Unity
         /// </summary>
         CustomEffects.CoroutineInterruptToken currentStopToken = new CustomEffects.CoroutineInterruptToken();
 
-        //public AudioSource audioClip = new AudioSource();
-
+        
+        private AudioSource narrationClip = new AudioSource();
+        private AudioSource talkingClipHigh = new AudioSource();
+        private AudioSource talkingClipLow = new AudioSource();
+        private AudioSource activeAudioSource = new AudioSource();
+        private string[] useTalkingClipHigh = {"Christine", "Viola"};
         private void Start()
         {
-            //audioClip = GetComponent<AudioSource>();
+            narrationClip = GameObject.Find("NarrationSFX").GetComponent<AudioSource>();
+            talkingClipHigh = GameObject.Find("TalkingSFX_High").GetComponent<AudioSource>();
+            talkingClipLow = GameObject.Find("TalkingSFX_Low").GetComponent<AudioSource>();
         }
         private void Awake()
         {
@@ -595,19 +602,43 @@ namespace Yarn.Unity
                     if (currentStopToken.WasInterrupted) {
                         // The typewriter effect was interrupted. Stop this
                         // entire coroutine.
+                        activeAudioSource.Stop();
                         yield break;
                     }
                 }
             }
-            currentLine = dialogueLine;
 
+            currentLine = dialogueLine;
+            if(activeAudioSource != null)
+            {
+                activeAudioSource.Stop();
+            }
+            
+            if(currentLine.CharacterName != null)
+            {
+                if (useTalkingClipHigh.Contains(currentLine.CharacterName))
+                {
+                    activeAudioSource = talkingClipHigh;
+                }
+                else
+                {
+                    activeAudioSource = talkingClipLow;
+                }
+                
+            }
+            else
+            {
+                activeAudioSource = narrationClip;
+            }
             // Run any presentations as a single coroutine. If this is stopped,
             // which UserRequestedViewAdvancement can do, then we will stop all
             // of the animations at once.
-            
+
+            activeAudioSource.Play();
             yield return StartCoroutine(PresentLine());
 
             currentStopToken.Complete();
+            activeAudioSource.Stop();
 
             // All of our text should now be visible.
             lineText.maxVisibleCharacters = int.MaxValue;
@@ -682,6 +713,28 @@ namespace Yarn.Unity
             // if we'd received a signal from any other part of the game (for
             // example, if a DialogueAdvanceInput had signalled us.)
             UserRequestedViewAdvancement();
+        }
+        public bool characterNameExists()
+        {
+            GameObject namePanelObject = this.gameObject.transform.Find("Name Panel").gameObject;
+            GameObject nameText = namePanelObject.transform.GetChild(0).gameObject;
+            //print(namePanel);
+            TextMeshProUGUI text = nameText.GetComponent<TextMeshProUGUI>();
+            string s = "";
+            if (text != null)
+            {
+                s = text.text;
+            }
+            // Debug.Log(s);
+            if (s != null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
