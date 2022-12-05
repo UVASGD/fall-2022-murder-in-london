@@ -16,6 +16,7 @@ public class SceneDirector : MonoBehaviour
     private bool loseGame = false;
     private string loseGameFile = "";
     private bool loseGameDialogueRan = false;
+    private bool finishScene = true;
     private void Awake()
     {
         if (_sceneDirector != null && _sceneDirector != this)
@@ -125,9 +126,27 @@ public class SceneDirector : MonoBehaviour
             if (ProgressManager.Instance.SceneComplete())
             {
                 if(FindObjectOfType<DialogueRunner>().IsDialogueRunning == false){
-                    //Debug.Log("changing scene");
-                    HashSet<string> nextExpectedAchievements = new();
-                    ProgressManager.Instance.FinishScene(nextExpectedAchievements);
+                    if (finishScene)
+                    {
+                        int sceneType = ProgressManager.Instance.getInvestigationScene();
+                        print(sceneType);
+                        if(sceneType == 1)
+                        {
+                            FindObjectOfType<DialogueRunner>().StartDialogue("Investigation1Finish");
+                        }
+                        else
+                        {
+                            FindObjectOfType<DialogueRunner>().StartDialogue("Investigation2Finish");
+                        }
+                        finishScene = false;
+                    }
+                    else
+                    {
+                        //Debug.Log("changing scene");
+                        HashSet<string> nextExpectedAchievements = new();
+                        ProgressManager.Instance.FinishScene(nextExpectedAchievements);
+                    }
+                    
                 }
             }
         }

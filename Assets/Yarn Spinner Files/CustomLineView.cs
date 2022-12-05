@@ -602,7 +602,7 @@ namespace Yarn.Unity
                     if (currentStopToken.WasInterrupted) {
                         // The typewriter effect was interrupted. Stop this
                         // entire coroutine.
-                        activeAudioSource.Stop();
+                        //activeAudioSource.Stop();
                         yield break;
                     }
                 }
@@ -682,7 +682,10 @@ namespace Yarn.Unity
             // We received a request to advance the view. If we're in the middle of
             // an animation, skip to the end of it. If we're not current in an
             // animation, interrupt the line so we can skip to the next one.
-
+            if(activeAudioSource != null)
+            {
+                activeAudioSource.Stop();
+            }
             // we have no line, so the user just mashed randomly
             if (currentLine == null)
             {
